@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "caseStudies": "Case Studies"
+  },
+  "home": {
+    "heroTitle": "I turn complex ideas into clear digital experiences.",
+    "intro": "This is a portfolio space where I share selected work, my approach to solving problems, and the practical details behind the outcomes.",
+    "viewCaseStudies": "View Case Studies",
+    "identity": {
+      "title": "Identity",
+      "designer": {
+        "title": "Designer",
+        "text": "I focus on structure, hierarchy, and clarity—translating user needs into interfaces that feel simple, intentional, and easy to navigate."
+      },
+      "developer": {
+        "title": "Developer",
+        "text": "I build maintainable frontends with a strong attention to performance, accessibility, and clean architecture—so projects scale without slowing down."
+      }
+    },
+    "selectedWork": {
+      "title": "Selected Work",
+      "items": {
+        "one": "Case Study: Redesigning a product onboarding flow",
+        "two": "Case Study: Building a reusable dashboard UI system",
+        "three": "Case Study: Improving performance for a content-heavy site"
+      }
+    },
+    "whatIDo": {
+      "title": "What I Do",
+      "items": {
+        "design": "Design",
+        "ux": "UX",
+        "frontend": "Frontend",
+        "angular": "Angular",
+        "apis": "APIs"
+      }
+    },
+    "cta": {
+      "title": "Let’s build something useful.",
+      "text": "If you want to see how I approach real constraints, start with the case studies—or reach out and tell me what you’re working on.",
+      "browseCaseStudies": "Browse case studies",
+      "contact": "Contact"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "About Page",
+      "placeholder": "Placeholder - UI will be implemented later."
+    },
+    "caseStudies": {
+      "title": "Case Studies Page",
+      "placeholder": "Placeholder - UI will be implemented later."
+    },
+    "projects": {
+      "title": "Projects Page",
+      "placeholder": "Placeholder - UI will be implemented later."
+    },
+    "contact": {
+      "title": "Contact Page",
+      "placeholder": "Placeholder - UI will be implemented later."
+    }
+  },
+  "footer": {
+    "placeholder": "Footer (placeholder)",
+    "rights": "All rights reserved",
+    "madeWith": "Made with",
+    "by": "by Mahmoud Sayed"
+  }
+}

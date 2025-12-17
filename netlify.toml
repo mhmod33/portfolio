@@ -1,8 +1,8 @@
 [build]
-command = "npx ng build"
-publish = "dist/demo/browser"
+  command = "npx ng build"
+  publish = "dist/portfolio/browser"
 
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from = "/*"
+  to = "/index.html"
+  status = 200

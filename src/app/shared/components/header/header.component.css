@@ -55,7 +55,7 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     /* Remove tap highlight on mobile */
     -webkit-tap-highlight-color: transparent;
@@ -66,6 +66,7 @@
     width: 20px;
     height: 20px;
     transition: transform 0.3s ease;
+    stroke: var(--text-primary);
 }
 
 /* Hover Effects */
@@ -77,19 +78,19 @@
 
 .nav-menu li a:hover svg {
     transform: scale(1.1);
+    stroke: var(--accent-color);
     filter: drop-shadow(0 0 5px var(--accent-color-20));
 }
 
 /* Active State */
 .nav-menu li a.active {
-    color: var(--text-primary);
+    color: var(--bg-primary);
     background: var(--accent-color);
-    box-shadow: 0 0 15px var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color-20);
 }
 
 .nav-menu li a.active svg {
-    color: #fff;
-    /* Icons on active state should be white/contrast */
+    stroke: var(--bg-primary);
 }
 
 /* Tooltip */
@@ -158,18 +159,26 @@
     border-radius: 50%;
     background: transparent;
     border: 1px solid transparent;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 600;
     font-size: 0.9rem;
 }
 
+.theme-toggle svg {
+    stroke: var(--text-primary);
+}
+
 .theme-toggle:hover,
 .lang-toggle:hover {
-    color: var(--text-primary);
+    color: var(--accent-color);
     background: var(--bg-tertiary);
     border-color: var(--border-color);
+}
+
+.theme-toggle:hover svg {
+    stroke: var(--accent-color);
 }
 
 /* Animation Keyframes */

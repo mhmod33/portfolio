@@ -21,47 +21,49 @@
 }
 
 [data-theme='dark'] {
-  --bg-primary: #111827;
-  --bg-secondary: #1f2937;
-  --bg-tertiary: #374151;
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --bg-tertiary: #2f2f2f;
 
-  --text-primary: #f9fafb;
-  --text-secondary: #d1d5db;
+  --text-primary: #f5f5f5;
+  --text-secondary: #c9c9c9;
 
-  --accent-color: #00d4ff;
-  --accent-color-5: rgba(0, 212, 255, 0.05);
-  --accent-color-10: rgba(0, 212, 255, 0.1);
-  --accent-color-20: rgba(0, 212, 255, 0.2);
+  --accent-color: #ffffff;
+  --accent-color-5: rgba(255, 255, 255, 0.05);
+  --accent-color-10: rgba(255, 255, 255, 0.1);
+  --accent-color-20: rgba(255, 255, 255, 0.2);
 
-  --secondary-color: #ff6b9d;
-  --secondary-color-20: rgba(255, 107, 157, 0.2);
+  --secondary-color: #6b8e5f;
+  --secondary-color-20: rgba(107, 142, 95, 0.2);
 
-  --border-color: #374151;
+  --border-color: #3a3a3a;
   --shadow-color: rgba(0, 0, 0, 0.3);
 
-  --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  --gradient-primary: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  --gradient-bg: linear-gradient(135deg, #242424 0%, #1a1a1a 100%);
 }
 
 [data-theme='light'] {
   --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #e9ecef;
+  --bg-secondary: #fafafa;
+  --bg-tertiary: #f5f5f5;
 
   --text-primary: #1a1a1a;
-  --text-secondary: #6c757d;
+  --text-secondary: #666666;
 
-  --accent-color: #00bcd4;
-  --accent-color-5: rgba(0, 188, 212, 0.05);
-  --accent-color-10: rgba(0, 188, 212, 0.1);
-  --accent-color-20: rgba(0, 188, 212, 0.2);
+  --accent-color: #1a1a1a;
+  --accent-color-5: rgba(26, 26, 26, 0.05);
+  --accent-color-10: rgba(26, 26, 26, 0.1);
+  --accent-color-20: rgba(26, 26, 26, 0.2);
 
-  --secondary-color: #e63946;
-  --secondary-color-20: rgba(230, 57, 70, 0.2);
+  --secondary-color: #6b8e5f;
+  --secondary-color-20: rgba(107, 142, 95, 0.2);
 
-  --border-color: #dee2e6;
-  --shadow-color: rgba(0, 0, 0, 0.1);
+  --border-color: #e5e5e5;
+  --shadow-color: rgba(0, 0, 0, 0.08);
 
-  --gradient-primary: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
+  --gradient-primary: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  --gradient-bg: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
 }
 
 html {

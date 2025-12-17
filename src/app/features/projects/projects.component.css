@@ -117,12 +117,12 @@
 .btn-icon {
     width: 55px;
     height: 55px;
-    background: var(--accent-color);
+    background: var(--text-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--bg-primary);
     font-weight: bold;
     font-size: 1.3rem;
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -130,11 +130,20 @@
     box-shadow: 0 5px 15px var(--accent-color-20);
 }
 
+.btn-icon svg {
+    stroke: var(--bg-primary);
+}
+
 .btn-icon:hover {
     background: var(--text-primary);
-    color: var(--accent-color);
+    color: var(--bg-primary);
     transform: scale(1.15) rotate(5deg);
     box-shadow: 0 10px 25px var(--accent-color-20);
+    opacity: 0.9;
+}
+
+.btn-icon:hover svg {
+    stroke: var(--bg-primary);
 }
 
 /* Content Section */

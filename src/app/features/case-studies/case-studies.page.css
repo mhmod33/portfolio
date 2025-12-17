@@ -1,0 +1,10 @@
+/* Case Studies Page - Minimal Custom Styles */
+
+/* Line clamp utility for text truncation */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 3; /* Standard property for compatibility */
+}

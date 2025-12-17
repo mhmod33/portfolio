@@ -8,7 +8,7 @@
   },
   "include": [
     "src/**/*.ts"
-  ],
+, "src/app/features/about/about.page.hml"  ],
   "exclude": [
     "src/**/*.spec.ts"
   ]

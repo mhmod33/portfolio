@@ -1,4 +1,7 @@
-/* Base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --primary: #3f51b5;
   --accent: #ff4081;
@@ -11,11 +14,14 @@
   --font-ar: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  * {
+    @apply m-0 p-0 box-border;
+  }
+  
+  body {
+    @apply bg-background text-text font-sans;
+  }
 }
 
 html {

@@ -50,12 +50,113 @@
   },
   "pages": {
     "about": {
-      "title": "About Page",
-      "placeholder": "Placeholder - UI will be implemented later."
+      "title": "About Me",
+      "intro": "I'm a creative developer who bridges the gap between design and technology. My journey began with visual storytelling and evolved into crafting digital experiences that are both beautiful and functional. I believe great software starts with understanding people and their needs.",
+      "journey": {
+        "title": "My Journey",
+        "graphicDesign": {
+          "title": "Graphic Design",
+          "description": "Started with visual communication, learning how color, typography, and composition can convey powerful messages and create emotional connections."
+        },
+        "freelance": {
+          "title": "Freelance Experience",
+          "description": "Worked with diverse clients across industries, delivering design solutions that solved real business problems while maintaining creative integrity."
+        },
+        "uiux": {
+          "title": "UI/UX Design",
+          "description": "Transitioned into digital product design, focusing on user-centered design principles and creating interfaces that are intuitive, accessible, and delightful."
+        },
+        "iti": {
+          "title": "ITI & Full-Stack Development",
+          "description": "Deepened my technical expertise through intensive training, learning how to build robust applications from frontend to backend while maintaining design sensibilities."
+        },
+        "currentFocus": {
+          "title": "Current Focus",
+          "description": "Specializing in modern frontend development with Angular, creating scalable, performant applications that seamlessly integrate design and engineering."
+        }
+      },
+      "howIWork": {
+        "title": "How I Work",
+        "items": {
+          "problemFirst": {
+            "title": "Problem-first thinking",
+            "description": "I start by understanding the core challenge and user needs before diving into solutions."
+          },
+          "designFirst": {
+            "title": "Design before code",
+            "description": "Visual and interaction design guide the development process, ensuring purposeful implementation."
+          },
+          "cleanCode": {
+            "title": "Clean, scalable frontend",
+            "description": "I write maintainable code that grows with the product and team."
+          },
+          "collaboration": {
+            "title": "Collaboration & iteration",
+            "description": "I believe the best products emerge from continuous feedback and improvement."
+          }
+        }
+      },
+      "skills": {
+        "title": "Skills Overview",
+        "design": {
+          "title": "Design Skills",
+          "items": [
+            "Visual Design & Brand Identity",
+            "UI/UX Design Principles",
+            "Wireframing & Prototyping",
+            "User Research & Testing",
+            "Typography & Color Theory",
+            "Responsive Design"
+          ]
+        },
+        "development": {
+          "title": "Development Skills",
+          "items": [
+            "Angular & Modern JavaScript",
+            "TypeScript & Component Architecture",
+            "HTML5 & Semantic Markup",
+            "CSS3 & Layout Systems",
+            "State Management & Data Flow",
+            "Performance Optimization"
+          ]
+        }
+      },
+      "closing": "My approach combines creative vision with technical precision. I believe that the best digital experiences emerge when design thinking and engineering excellence work together - not as separate disciplines, but as complementary parts of a unified craft. Every line of code I write serves both the user's needs and the product's aesthetic vision."
     },
     "caseStudies": {
-      "title": "Case Studies Page",
-      "placeholder": "Placeholder - UI will be implemented later."
+      "title": "Case Studies",
+      "intro": "Real-world challenges require practical solutions. These case studies showcase my approach to problem-solving, from initial research through implementation and iteration. Each project represents a unique intersection of user needs, business goals, and technical constraints.",
+      "viewCaseStudy": "View Case Study",
+      "studies": {
+        "onboarding": {
+          "title": "Redesigning Product Onboarding Flow",
+          "description": "Transformed a complex 8-step onboarding process into an intuitive 3-step journey, resulting in 40% higher completion rates and improved user satisfaction through data-driven design decisions.",
+          "tags": {
+            "design": "Design",
+            "ux": "UX",
+            "research": "Research"
+          }
+        },
+        "dashboard": {
+          "title": "Building Reusable Dashboard UI System",
+          "description": "Developed a comprehensive design system and component library for enterprise dashboards, enabling consistent user experiences across multiple products while reducing development time by 60%.",
+          "tags": {
+            "angular": "Angular",
+            "system": "System",
+            "components": "Components"
+          }
+        },
+        "performance": {
+          "title": "Performance Optimization for Content-Heavy Site",
+          "description": "Achieved 3x faster load times and 90+ Lighthouse scores through strategic code splitting, lazy loading, and optimization techniques while maintaining full functionality.",
+          "tags": {
+            "optimization": "Optimization",
+            "angular": "Angular",
+            "performance": "Performance"
+          }
+        }
+      },
+      "closing": "Each case study represents a journey from problem to solution, highlighting the collaborative process, technical decisions, and measurable outcomes that drive successful digital products."
     },
     "projects": {
       "title": "Projects Page",

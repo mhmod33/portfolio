@@ -7,7 +7,8 @@ export const portfolioData = {
     location: 'Egypt, Beni Suef',
     linkedin: 'linkedin.com/in/mahmoud-sayed-ali',
     github: 'github.com/mhmod33',
-    behance: 'https://www.behance.net/mahmoudsayb75d00'
+    behance: 'https://www.behance.net/mahmoudsayb75d00',
+    whatsapp: 'https://wa.me/+201159403998'
   },
 
   stats: {

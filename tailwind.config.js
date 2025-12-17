@@ -27,6 +27,7 @@ module.exports = {
         text: '#ffffff',
       },
       fontFamily: {
+        'sans': ['var(--font-primary)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         'arabic': ['IBM Plex Sans Arabic', 'sans-serif'],
         'english': ['Poppins', 'sans-serif'],
       },

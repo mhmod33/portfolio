@@ -1,15 +1,15 @@
 <section class="contact-page">
     <div class="container">
-        <h1 class="page-title font-english">
+        <h1 class="page-title  ">
             {{ langService.t({ en: 'Get In Touch', ar: 'تواصل معي' }) }}
         </h1>
 
         <div class="contact-container">
             <!-- Info Left Side -->
             <div class="contact-info">
-                <h2 class="section-heading font-english">{{ langService.t({ en: "Let's Connect", ar: 'لنتواصل' }) }}
+                <h2 class="section-heading  ">{{ langService.t({ en: "Let's Connect", ar: 'لنتواصل' }) }}
                 </h2>
-                <p class="section-subtext font-arabic">
+                <p class="section-subtext  ">
                     {{ langService.t({
                     en: 'I\'m always interested in hearing about new projects and opportunities. Whether you
                     have a question or just want to say hi, feel free to reach out!',
@@ -20,35 +20,87 @@
 
                 <div class="contact-details">
                     <div class="detail-item">
-                        <div class="icon-box">📧</div>
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <g clip-path="url(#clip0_4418_6973)">
+                                    <path
+                                        d="M17 21.25H7C3.35 21.25 1.25 19.15 1.25 15.5V8.5C1.25 4.85 3.35 2.75 7 2.75H17C20.65 2.75 22.75 4.85 22.75 8.5V15.5C22.75 19.15 20.65 21.25 17 21.25ZM7 4.25C4.14 4.25 2.75 5.64 2.75 8.5V15.5C2.75 18.36 4.14 19.75 7 19.75H17C19.86 19.75 21.25 18.36 21.25 15.5V8.5C21.25 5.64 19.86 4.25 17 4.25H7Z" />
+                                    <path
+                                        d="M11.9998 12.87C11.1598 12.87 10.3098 12.61 9.65978 12.08L6.52978 9.57997C6.20978 9.31997 6.14978 8.84997 6.40978 8.52997C6.66978 8.20997 7.13978 8.14997 7.45978 8.40997L10.5898 10.91C11.3498 11.52 12.6398 11.52 13.3998 10.91L16.5298 8.40997C16.8498 8.14997 17.3298 8.19997 17.5798 8.52997C17.8398 8.84997 17.7898 9.32997 17.4598 9.57997L14.3298 12.08C13.6898 12.61 12.8398 12.87 11.9998 12.87Z" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_4418_6973">
+                                        <rect width="24" height="24" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
                         <div>
-                            <span class="label font-english">Email</span>
-                            <span class="value font-english">mahmoud.sayed@example.com</span>
+                            <span class="label  ">Email</span>
+                            <span class="value  ">me653830@gmail.com</span>
                         </div>
                     </div>
 
                     <div class="detail-item">
-                        <div class="icon-box">📱</div>
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <g clip-path="url(#clip0_4418_7773)">
+                                    <path
+                                        d="M2.00014 22.7502C1.80014 22.7502 1.61011 22.6702 1.47011 22.5302C1.28011 22.3402 1.20016 22.0602 1.27016 21.8002L2.53017 17.0902C1.69017 15.5302 1.25014 13.7702 1.25014 11.9902C1.25014 6.06023 6.07014 1.24023 12.0001 1.24023C17.9301 1.24023 22.7501 6.06023 22.7501 11.9902C22.7501 17.9202 17.9301 22.7402 12.0001 22.7402C10.1901 22.7402 8.42017 22.2902 6.84017 21.4302L2.20015 22.7202C2.13015 22.7402 2.07014 22.7502 2.00014 22.7502ZM6.94014 19.8802C7.07014 19.8802 7.20015 19.9203 7.32015 19.9803C8.73015 20.8103 10.3501 21.2502 12.0001 21.2502C17.1001 21.2502 21.2501 17.1002 21.2501 12.0002C21.2501 6.90024 17.1001 2.75024 12.0001 2.75024C6.90014 2.75024 2.75014 6.90024 2.75014 12.0002C2.75014 13.6302 3.18013 15.2202 3.99013 16.6202C4.09013 16.7902 4.12015 17.0002 4.07015 17.1902L3.07015 20.9302L6.75014 19.9102C6.81014 19.8902 6.88014 19.8802 6.94014 19.8802Z" />
+                                    <path
+                                        d="M14.74 17.7603C14.12 17.7603 13.48 17.6203 12.81 17.3303C12.18 17.0603 11.55 16.7003 10.94 16.2503C10.34 15.8103 9.75002 15.3103 9.21002 14.7703C8.67002 14.2203 8.16998 13.6403 7.72998 13.0403C7.27998 12.4103 6.91997 11.7903 6.65997 11.1803C6.37997 10.5203 6.23999 9.87029 6.23999 9.25029C6.23999 8.81029 6.31997 8.39029 6.46997 8.00029C6.62997 7.59029 6.88998 7.22028 7.22998 6.90028C7.86998 6.27028 8.79002 6.0403 9.52002 6.3903C9.77002 6.5003 9.98001 6.6803 10.14 6.9203L11.3 8.55027C11.42 8.71027 11.51 8.88027 11.58 9.05027C11.66 9.25027 11.71 9.4503 11.71 9.6403C11.71 9.9003 11.64 10.1603 11.5 10.3903C11.41 10.5403 11.28 10.7203 11.11 10.8903L10.98 11.0303C11.04 11.1103 11.11 11.2103 11.22 11.3303C11.43 11.5703 11.66 11.8303 11.91 12.0803C12.16 12.3203 12.41 12.5603 12.66 12.7703C12.78 12.8703 12.88 12.9503 12.96 13.0003L13.1 12.8603C13.28 12.6803 13.46 12.5403 13.64 12.4503C13.97 12.2403 14.48 12.1903 14.93 12.3803C15.09 12.4403 15.25 12.5303 15.42 12.6503L17.09 13.8303C17.32 13.9903 17.5 14.2103 17.62 14.4603C17.72 14.7103 17.76 14.9303 17.76 15.1603C17.76 15.4603 17.69 15.7503 17.56 16.0303C17.43 16.2903 17.28 16.5203 17.1 16.7303C16.78 17.0803 16.41 17.3403 16.01 17.5103C15.61 17.6803 15.18 17.7603 14.74 17.7603ZM8.78998 7.74028C8.72998 7.74028 8.53003 7.74028 8.28003 7.99028C8.09003 8.17028 7.96 8.36029 7.87 8.57029C7.78 8.78029 7.73999 9.0203 7.73999 9.2603C7.73999 9.6803 7.83998 10.1303 8.03998 10.6103C8.24998 11.1103 8.56 11.6403 8.94 12.1703C9.33 12.7003 9.77001 13.2303 10.26 13.7203C10.75 14.2003 11.27 14.6503 11.81 15.0503C12.33 15.4303 12.86 15.7303 13.39 15.9603C14.15 16.2903 14.85 16.3703 15.42 16.1303C15.62 16.0503 15.8 15.9103 15.98 15.7303C16.07 15.6303 16.14 15.5303 16.2 15.4003C16.23 15.3303 16.25 15.2503 16.25 15.1803C16.25 15.1603 16.25 15.1303 16.22 15.0703L14.55 13.9103C14.48 13.8603 14.41 13.8203 14.35 13.8003C14.31 13.8203 14.25 13.8503 14.14 13.9603L13.76 14.3403C13.47 14.6303 13.01 14.7103 12.64 14.5803L12.46 14.5003C12.23 14.3803 11.97 14.2003 11.68 13.9503C11.4 13.7103 11.13 13.4603 10.84 13.1803C10.56 12.8903 10.31 12.6203 10.07 12.3403C9.81001 12.0303 9.63001 11.7803 9.51001 11.5703L9.40002 11.3103C9.37002 11.2103 9.35999 11.1003 9.35999 11.0003C9.35999 10.7203 9.46002 10.4703 9.65002 10.2703L10.03 9.88029C10.14 9.77029 10.18 9.7103 10.2 9.6703C10.17 9.6003 10.13 9.54029 10.08 9.47029L8.90997 7.82029L8.78998 7.74028Z" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_4418_7773">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
                         <div>
-                            <span class="label font-english">Phone</span>
-                            <span class="value font-english">+20 123 456 7890</span>
+                            <span class="label">WhatsApp</span>
+                            <span class="value" ><a href="https://wa.me/+201159403998" target="_blank">+20 11 59403998</a></span>
                         </div>
                     </div>
 
                     <div class="detail-item">
-                        <div class="icon-box">📍</div>
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <g clip-path="url(#clip0_4418_7021)">
+                                    <path
+                                        d="M11.9999 14.1695C9.86988 14.1695 8.12988 12.4395 8.12988 10.2995C8.12988 8.15945 9.86988 6.43945 11.9999 6.43945C14.1299 6.43945 15.8699 8.16945 15.8699 10.3095C15.8699 12.4495 14.1299 14.1695 11.9999 14.1695ZM11.9999 7.93945C10.6999 7.93945 9.62988 8.99945 9.62988 10.3095C9.62988 11.6195 10.6899 12.6795 11.9999 12.6795C13.3099 12.6795 14.3699 11.6195 14.3699 10.3095C14.3699 8.99945 13.2999 7.93945 11.9999 7.93945Z" />
+                                    <path
+                                        d="M11.9999 22.76C10.5199 22.76 9.02993 22.2 7.86993 21.09C4.91993 18.25 1.65993 13.72 2.88993 8.33C3.99993 3.44 8.26993 1.25 11.9999 1.25C11.9999 1.25 11.9999 1.25 12.0099 1.25C15.7399 1.25 20.0099 3.44 21.1199 8.34C22.3399 13.73 19.0799 18.25 16.1299 21.09C14.9699 22.2 13.4799 22.76 11.9999 22.76ZM11.9999 2.75C9.08993 2.75 5.34993 4.3 4.35993 8.66C3.27993 13.37 6.23993 17.43 8.91993 20C10.6499 21.67 13.3599 21.67 15.0899 20C17.7599 17.43 20.7199 13.37 19.6599 8.66C18.6599 4.3 14.9099 2.75 11.9999 2.75Z" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_4418_7021">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
                         <div>
-                            <span class="label font-english">Location</span>
-                            <span class="value font-arabic">{{ langService.t({ en: 'Cairo, Egypt', ar: 'القاهرة، مصر' })
+                            <span class="label ">Location</span>
+                            <span class="value ">{{ langService.t({ en: 'Cairo, Egypt', ar: 'القاهرة، مصر' })
                                 }}</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="social-links">
-                    <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
-                    <a href="#" class="social-btn" aria-label="GitHub">gh</a>
-                    <a href="#" class="social-btn" aria-label="Twitter">tw</a>
+                    <a href="https://www.linkedin.com/in/mahmoud-sayed-ali/" target="_blank" class="social-btn" aria-label="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    </a>
+                    <a href="https://github.com/mhmod33" target="_blank" class="social-btn" aria-label="GitHub">
+                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    </a>
+                
                 </div>
             </div>
 
@@ -56,31 +108,31 @@
             <div class="contact-form-wrapper">
                 <form (ngSubmit)="onSubmit()" class="contact-form">
                     <div class="form-group">
-                        <label class="font-english">{{ langService.t({ en: 'Name', ar: 'الاسم' }) }}</label>
+                        <label class=" ">{{ langService.t({ en: 'Name', ar: 'الاسم' }) }}</label>
                         <input type="text" [(ngModel)]="formData.name" name="name" required class="form-input"
                             [placeholder]="langService.t({ en: 'Your Name', ar: 'اسمك' })" />
                     </div>
 
                     <div class="form-group">
-                        <label class="font-english">{{ langService.t({ en: 'Email', ar: 'البريد الإلكتروني' })
+                        <label class=" ">{{ langService.t({ en: 'Email', ar: 'البريد الإلكتروني' })
                             }}</label>
                         <input type="email" [(ngModel)]="formData.email" name="email" required class="form-input"
                             [placeholder]="langService.t({ en: 'your.email@example.com', ar: 'بريدك@example.com' })" />
                     </div>
 
                     <div class="form-group">
-                        <label class="font-english">{{ langService.t({ en: 'Subject', ar: 'الموضوع' }) }}</label>
+                        <label class=" ">{{ langService.t({ en: 'Subject', ar: 'الموضوع' }) }}</label>
                         <input type="text" [(ngModel)]="formData.subject" name="subject" required class="form-input"
                             [placeholder]="langService.t({ en: 'Project Discussion', ar: 'مناقشة المشروع' })" />
                     </div>
 
                     <div class="form-group">
-                        <label class="font-english">{{ langService.t({ en: 'Message', ar: 'الرسالة' }) }}</label>
+                        <label class=" ">{{ langService.t({ en: 'Message', ar: 'الرسالة' }) }}</label>
                         <textarea [(ngModel)]="formData.message" name="message" required rows="5" class="form-input"
                             [placeholder]="langService.t({ en: 'Tell me about your project...', ar: 'أخبرني عن مشروعك...' })"></textarea>
                     </div>
 
-                    <button type="submit" class="submit-btn font-english">
+                    <button type="submit" class="submit-btn  ">
                         {{ langService.t({ en: 'Send Message', ar: 'إرسال الرسالة' }) }}
                         <span class="btn-arrow">→</span>
                     </button>

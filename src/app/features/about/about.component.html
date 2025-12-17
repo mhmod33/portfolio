@@ -1,6 +1,6 @@
 <section class="about-page">
     <div class="container">
-        <h1 class="page-title font-english">
+        <h1 class="page-title">
             {{ langService.t({ en: 'About Me', ar: 'نبذة عني' }) }}
         </h1>
 
@@ -10,18 +10,18 @@
                     <img src="assets/profile.jpg" alt="Profile" class="profile-img" />
                     <div class="experience-badge animate-float">
                         <span class="years">6+</span>
-                        <span class="text font-english">Years Exp.</span>
+                        <span class="text">Years Exp.</span>
                     </div>
                 </div>
             </div>
 
             <div class="bio-section">
-                <h2 class="greeting font-english">
+                <h2 class="greeting">
                     {{ langService.t({ en: 'Hello! I\'m Mahmoud Sayed Ali', ar: 'مرحباً! أنا محمود سيد علي' }) }}
                 </h2>
-                <h3 class="role-title font-english">Fullstack Developer & UI/UX Designer</h3>
+                <h3 class="role-title ">Fullstack Developer & UI/UX Designer</h3>
 
-                <div class="bio-text font-english text-justify">
+                <div class="bio-text  text-justify">
                     <p>
                         {{ langService.t({
                         en: 'A passionate Fullstack Developer and UI/UX Designer with over 6 years of experience in
@@ -42,26 +42,26 @@
                 <div class="stats-grid">
                     <div class="stat-card">
                         <span class="stat-number">50+</span>
-                        <span class="stat-label font-arabic">{{ langService.t({ en: 'Projects Completed', ar: 'مشاريع
+                        <span class="stat-label  ">{{ langService.t({ en: 'Projects Completed', ar: 'مشاريع
                             منجزة' }) }}</span>
                     </div>
                     <div class="stat-card">
                         <span class="stat-number">100%</span>
-                        <span class="stat-label font-arabic">{{ langService.t({ en: 'Client Satisfaction', ar: 'رضا
+                        <span class="stat-label  ">{{ langService.t({ en: 'Client Satisfaction', ar: 'رضا
                             العملاء' }) }}</span>
                     </div>
                     <div class="stat-card">
                         <span class="stat-number">24/7</span>
-                        <span class="stat-label font-arabic">{{ langService.t({ en: 'Support', ar: 'دعم فني' })
+                        <span class="stat-label  ">{{ langService.t({ en: 'Available', ar: 'متاح' })
                             }}</span>
                     </div>
                 </div>
 
                 <div class="cta-buttons">
-                    <a href="/contact" class="btn-primary font-english">
+                    <a href="/contact" class="btn-primary ">
                         {{ langService.t({ en: 'Contact Me', ar: 'تواصل معي' }) }}
                     </a>
-                    <a href="#" class="btn-secondary font-english">
+                    <a (click)="downloadCV()" class="btn-secondary">
                         {{ langService.t({ en: 'Download CV', ar: 'تحميل السيرة الذاتية' }) }}
                     </a>
                 </div>

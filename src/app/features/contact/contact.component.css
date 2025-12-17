@@ -83,10 +83,25 @@
     transition: all 0.3s ease;
 }
 
+.icon-box svg {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+}
+
+.icon-box svg path {
+    fill: var(--accent-color);
+    transition: fill 0.3s ease;
+}
+
 .detail-item:hover .icon-box {
     background: var(--accent-color);
     color: white;
     transform: rotate(5deg);
+}
+
+.detail-item:hover .icon-box svg path {
+    fill: white;
 }
 
 .label {

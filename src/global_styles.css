@@ -50,10 +50,10 @@
   --text-primary: #1a1a1a;
   --text-secondary: #6c757d;
 
-  --accent-color: #0099cc;
-  --accent-color-5: rgba(0, 153, 204, 0.05);
-  --accent-color-10: rgba(0, 153, 204, 0.1);
-  --accent-color-20: rgba(0, 153, 204, 0.2);
+  --accent-color: #00bcd4;
+  --accent-color-5: rgba(0, 188, 212, 0.05);
+  --accent-color-10: rgba(0, 188, 212, 0.1);
+  --accent-color-20: rgba(0, 188, 212, 0.2);
 
   --secondary-color: #e63946;
   --secondary-color-20: rgba(230, 57, 70, 0.2);
@@ -61,7 +61,7 @@
   --border-color: #dee2e6;
   --shadow-color: rgba(0, 0, 0, 0.1);
 
-  --gradient-primary: linear-gradient(135deg, #0099cc 0%, #006b8f 100%);
+  --gradient-primary: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
 }
 
 html {
@@ -93,7 +93,10 @@ a {
   color: inherit;
 }
 
-button {
+button,
+input,
+textarea,
+select {
   font-family: inherit;
 }
 

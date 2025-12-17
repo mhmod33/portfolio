@@ -2,6 +2,7 @@ import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LanguageService } from '../../core/services/language.service';
+import { portfolioData } from '../../core/utils/portfolio-data';
 
 @Component({
   selector: 'app-contact',

@@ -25,6 +25,15 @@ export class LanguageService {
     const lang = this.currentLanguage();
     document.documentElement.setAttribute('lang', lang);
     document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+    if (lang === 'ar') {
+      document.body.classList.add('font-arabic');
+      document.body.classList.remove('font-english');
+    } else {
+      document.body.classList.add('font-english');
+      document.body.classList.remove('font-arabic');
+    }
+
     localStorage.setItem('language', lang);
   }
 

@@ -1,0 +1,22 @@
+/* Header Styles */
+:host {
+  display: block;
+  font-family: var(--font-en);
+}
+
+[dir="rtl"] :host {
+  font-family: var(--font-ar);
+}
+
+header {
+  font-family: inherit;
+}
+
+nav {
+  font-family: inherit;
+}
+
+nav a {
+  font-family: inherit;
+  font-weight: 500;
+}

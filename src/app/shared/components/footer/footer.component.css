@@ -1,0 +1,13 @@
+/* Footer Styles */
+:host {
+  display: block;
+  font-family: var(--font-en);
+}
+
+[dir="rtl"] :host {
+  font-family: var(--font-ar);
+}
+
+footer {
+  font-family: inherit;
+}

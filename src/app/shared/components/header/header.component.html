@@ -1,11 +1,18 @@
-<header>
-  <nav aria-label="Primary">
-    <ul>
-      <li><a routerLink="/">{{ 'nav.home' | translate }}</a></li>
-      <li><a routerLink="/about">{{ 'nav.about' | translate }}</a></li>
-      <li><a routerLink="/case-studies">{{ 'nav.caseStudies' | translate }}</a></li>
-      <li><a routerLink="/projects">{{ 'nav.projects' | translate }}</a></li>
-      <li><a routerLink="/contact">{{ 'nav.contact' | translate }}</a></li>
-    </ul>
-  </nav>
+<header class="header">
+  <div class="header-content">
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a routerLink="/" class="nav-link">{{ 'nav.home' | translate }}</a></li>
+        <li><a routerLink="/about" class="nav-link">{{ 'nav.about' | translate }}</a></li>
+        <li><a routerLink="/case-studies" class="nav-link">{{ 'nav.caseStudies' | translate }}</a></li>
+        <li><a routerLink="/projects" class="nav-link">{{ 'nav.projects' | translate }}</a></li>
+        <li><a routerLink="/contact" class="nav-link">{{ 'nav.contact' | translate }}</a></li>
+      </ul>
+    </nav>
+    
+    <div class="header-controls">
+      <app-language-toggle></app-language-toggle>
+      <app-theme-toggle></app-theme-toggle>
+    </div>
+  </div>
 </header>

@@ -42,8 +42,8 @@
       }
     },
     "cta": {
-      "title": "Let’s build something useful.",
-      "text": "If you want to see how I approach real constraints, start with the case studies—or reach out and tell me what you’re working on.",
+      "title": "Let's build something useful.",
+      "text": "If you want to see how I approach real constraints, start with the case studies—or reach out and tell me what you're working on.",
       "browseCaseStudies": "Browse case studies",
       "contact": "Contact"
     }
@@ -159,8 +159,50 @@
       "closing": "Each case study represents a journey from problem to solution, highlighting the collaborative process, technical decisions, and measurable outcomes that drive successful digital products."
     },
     "projects": {
-      "title": "Projects Page",
-      "placeholder": "Placeholder - UI will be implemented later."
+      "title": "Projects",
+      "intro": "A collection of development-focused projects showcasing technical implementation, architecture decisions, and problem-solving through code. These represent the engineering side of my work.",
+      "list_title": "Projects List",
+      "note_title": "Note",
+      "note_content": "These projects focus on technical implementation and development challenges. For detailed UX work, design processes, and user-centered solutions,",
+      "case_studies_link": "visit the Case Studies section.",
+      "items": {
+        "ecommerce": {
+          "name": "E-Commerce Platform",
+          "description": "Full-stack web application with product catalog, shopping cart, and payment integration",
+          "tech": ["Angular", "Node.js", "MongoDB", "Stripe API"],
+          "links": ["GitHub", "Live Demo"]
+        },
+        "taskManagement": {
+          "name": "Task Management System",
+          "description": "Collaborative project management tool with real-time updates and team features",
+          "tech": ["Angular", "Laravel", "MySQL", "WebSocket"],
+          "links": ["GitHub", "Live Demo"]
+        },
+        "apiDashboard": {
+          "name": "API Dashboard",
+          "description": "Analytics dashboard for monitoring API performance and usage metrics",
+          "tech": ["React", "TypeScript", "D3.js", "REST API"],
+          "links": ["GitHub", "Documentation"]
+        },
+        "cms": {
+          "name": "Content Management System",
+          "description": "Flexible CMS with custom content types and role-based permissions",
+          "tech": ["Angular", "Laravel", "PostgreSQL", "Redis"],
+          "links": ["GitHub", "Live Demo"]
+        },
+        "chatApp": {
+          "name": "Real-time Chat Application",
+          "description": "Messaging platform with channels, file sharing, and push notifications",
+          "tech": ["Angular", "Socket.io", "Express", "JWT Auth"],
+          "links": ["GitHub", "Live Demo"]
+        },
+        "weatherDashboard": {
+          "name": "Weather Dashboard",
+          "description": "Weather application with forecasts, maps, and location-based services",
+          "tech": ["Vue.js", "OpenWeather API", "Leaflet Maps", "PWA"],
+          "links": ["GitHub", "Live Demo"]
+        }
+      }
     },
     "contact": {
       "title": "Contact Page",
@@ -168,9 +210,13 @@
     }
   },
   "footer": {
-    "placeholder": "Footer (placeholder)",
+    "title": "Mahmoud Sayed",
+    "description": "Full-stack developer passionate about creating exceptional digital experiences.",
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "copyright": "©",
+    "by": "by",
     "rights": "All rights reserved",
-    "madeWith": "Made with",
-    "by": "by Mahmoud Sayed"
+    "madeWith": "Made with"
   }
 }

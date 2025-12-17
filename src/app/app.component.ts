@@ -1,12 +1,19 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
   template: `
-    <router-outlet></router-outlet>
+    <app-header></app-header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+    <app-footer></app-footer>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [`
@@ -24,6 +31,10 @@ import { RouterOutlet } from '@angular/router';
     
     * {
       font-family: inherit;
+    }
+    
+    main {
+      flex: 1;
     }
   `]
 })

@@ -1,46 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>Portfolio</title>
-    <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="theme-color" content="#3f51b5">
-    <meta name="description" content="Portfolio - UI/UX & Angular Developer">
+    <title>Mahmoud Sayed Ali - Fullstack Developer & UI/UX Designer</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/">
+    <meta name="description" content="Full Stack PHP Developer & UI/UX Designer with 6+ years of experience. Combining design expertise with strong coding skills in Laravel, Angular, Node.js, and more." />
+    <meta name="keywords" content="Fullstack Developer, PHP, Laravel, Angular, UI/UX Designer, Web Developer, Mahmoud Sayed Ali" />
+    <meta name="author" content="Mahmoud Sayed Ali Ahmed" />
+    <meta property="og:title" content="Mahmoud Sayed Ali - Fullstack Developer & UI/UX Designer" />
+    <meta property="og:description" content="Full Stack PHP Developer & UI/UX Designer with 6+ years of experience in building impactful digital experiences." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mahmoud Sayed Ali - Fullstack Developer & UI/UX Designer" />
+    <meta name="twitter:description" content="Full Stack PHP Developer & UI/UX Designer with 6+ years of experience." />
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
-    
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-      /* Critical CSS - Loads before the main CSS */
-      :root {
-        --font-en: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        --font-ar: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      }
-      
-      body {
-        margin: 0;
-        font-family: var(--font-en);
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        background-color: #0f172a;
-        color: #ffffff;
-      }
-
-      /* RTL support */
-      [dir="rtl"] {
-        font-family: var(--font-ar);
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <app-root></app-root>
+    <app-root>
+      <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: system-ui;">
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Loading Portfolio...</div>
+          <div style="width: 50px; height: 50px; border: 4px solid #f3f3f3; border-top: 4px solid #00d4ff; border-radius: 50%; margin: 0 auto; animation: spin 1s linear infinite;"></div>
+        </div>
+      </div>
+      <style>
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      </style>
+    </app-root>
   </body>
 </html>

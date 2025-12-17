@@ -26,6 +26,10 @@ module.exports = {
         surface: '#1e293b',
         text: '#ffffff',
       },
+      fontFamily: {
+        'arabic': ['IBM Plex Sans Arabic', 'sans-serif'],
+        'english': ['Poppins', 'sans-serif'],
+      },
     },
   },
   plugins: [],

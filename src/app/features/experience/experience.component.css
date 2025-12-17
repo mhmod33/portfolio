@@ -1,0 +1,337 @@
+:host {
+    display: block;
+}
+
+.experience-page {
+    padding: 6rem 0;
+    min-height: 100vh;
+    background: #111827;
+    color: #fff;
+    overflow: hidden;
+    /* Prevent spill from animations */
+}
+
+.page-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    opacity: 0;
+    animation: titleReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 1.1rem;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: fadeIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 4rem;
+}
+
+/* Vertical Line with Draw Animation */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 2px;
+    background: #f59e0b;
+    transform-origin: top;
+    transform: scaleY(0);
+    animation: drawLine 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 4rem;
+    padding-left: 3.5rem;
+    opacity: 0;
+    /* Will be animated with forwards */
+}
+
+/* Dots with Pop Animation */
+.timeline-dot {
+    position: absolute;
+    left: 17px;
+    top: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #f59e0b;
+    z-index: 2;
+    box-shadow: 0 0 0 4px #111827;
+    transform: scale(0);
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.timeline-dot::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid rgba(245, 158, 11, 0.5);
+    animation: ripple 2s infinite;
+}
+
+.timeline-content {
+    background: rgba(31, 41, 55, 0.7);
+    /* Transparent bg for glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transform: translateY(20px);
+}
+
+.timeline-content:hover {
+    border-color: #f59e0b;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    background: #232d3d;
+    /* Slightly lighter on hover */
+}
+
+/* Card Content Styling */
+.role {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #fff, #9ca3af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.company {
+    font-size: 1rem;
+    color: #f59e0b;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.85rem;
+    color: #9ca3af;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.duties {
+    color: #d1d5db;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .timeline::before {
+        left: 50%;
+        transform: translateX(-50%) scaleY(0);
+        /* Start scaled 0 */
+    }
+
+    .timeline-item {
+        padding-left: 0;
+        margin-bottom: 0;
+        min-height: 200px;
+        width: 100%;
+    }
+
+    .timeline-dot {
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        top: 2rem;
+    }
+
+    .timeline-content {
+        width: 45%;
+    }
+
+    /* Odd items: Left */
+    .timeline-item:nth-child(odd) .timeline-content {
+        float: left;
+        text-align: right;
+        margin-right: 50%;
+        transform-origin: right center;
+    }
+
+    .timeline-item:nth-child(odd) .company,
+    .timeline-item:nth-child(odd) .meta {
+        justify-content: flex-end;
+    }
+
+    /* Even items: Right */
+    .timeline-item:nth-child(even) .timeline-content {
+        float: right;
+        text-align: left;
+        margin-left: 50%;
+        margin-top: 4rem;
+        transform-origin: left center;
+    }
+
+    .timeline-item::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+/* New Modern Animations */
+
+@keyframes titleReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+        filter: blur(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes drawLine {
+    0% {
+        transform: translateX(-50%) scaleY(0);
+    }
+
+    /* Center on desktop? Need to handle mobile/desktop transform diff in keyframes or via class */
+    100% {
+        transform: translateX(-50%) scaleY(1);
+    }
+}
+
+/* Separate drawLine for mobile since translate is different */
+@media (max-width: 767px) {
+    @keyframes drawLine {
+        0% {
+            transform: scaleY(0);
+        }
+
+        100% {
+            transform: scaleY(1);
+        }
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: translateX(-50%) scale(0);
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+/* Mobile PopIn needs different translate */
+@media (max-width: 767px) {
+    @keyframes popIn {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+}
+
+@keyframes cardEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+        filter: blur(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Staggered Delays using specific timeline item indices */
+
+.timeline-item {
+    animation: cardEntrance 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.timeline-item:nth-child(1) {
+    animation-delay: 0.8s;
+}
+
+.timeline-item:nth-child(1) .timeline-dot {
+    animation-delay: 0.8s;
+}
+
+.timeline-item:nth-child(2) {
+    animation-delay: 1.1s;
+}
+
+.timeline-item:nth-child(2) .timeline-dot {
+    animation-delay: 1.1s;
+}
+
+.timeline-item:nth-child(3) {
+    animation-delay: 1.4s;
+}
+
+.timeline-item:nth-child(3) .timeline-dot {
+    animation-delay: 1.4s;
+}
+
+.timeline-item:nth-child(4) {
+    animation-delay: 1.7s;
+}
+
+.timeline-item:nth-child(4) .timeline-dot {
+    animation-delay: 1.7s;
+}
+
+/* Connecting Lines (Desktop optional fancy addition) */
+/* Could add :after on timeline-content to draw line to center, but dotted line in visual was minimal */

@@ -1,28 +1,3 @@
-/* Main Layout Styles */
-:host {
-  display: block;
-  font-family: var(--font-en);
-  color: var(--text);
-  background-color: var(--background);
-  min-height: 100vh;
-}
-
-[dir="rtl"] :host {
-  font-family: var(--font-ar);
-}
-
-/* Ensure all child components inherit the font */
-* {
-  font-family: inherit;
-}
-
-/* Header and footer styles */
-app-header, app-footer {
-  font-family: inherit;
-}
-
-/* Content area */
-main {
-  font-family: inherit;
-  min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 60px));
+.main-content {
+    position: relative;
 }

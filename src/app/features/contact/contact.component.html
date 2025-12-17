@@ -1,0 +1,91 @@
+<section class="contact-page">
+    <div class="container">
+        <h1 class="page-title font-english">
+            {{ langService.t({ en: 'Get In Touch', ar: 'تواصل معي' }) }}
+        </h1>
+
+        <div class="contact-container">
+            <!-- Info Left Side -->
+            <div class="contact-info">
+                <h2 class="section-heading font-english">{{ langService.t({ en: "Let's Connect", ar: 'لنتواصل' }) }}
+                </h2>
+                <p class="section-subtext font-arabic">
+                    {{ langService.t({
+                    en: 'I\'m always interested in hearing about new projects and opportunities. Whether you
+                    have a question or just want to say hi, feel free to reach out!',
+                    ar: 'أنا دائماً مهتم بسماع المشاريع والفرص الجديدة. سواء كان لديك سؤال أو تريد فقط أن تقول
+                    مرحباً، لا تتردد في التواصل!'
+                    }) }}
+                </p>
+
+                <div class="contact-details">
+                    <div class="detail-item">
+                        <div class="icon-box">📧</div>
+                        <div>
+                            <span class="label font-english">Email</span>
+                            <span class="value font-english">mahmoud.sayed@example.com</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="icon-box">📱</div>
+                        <div>
+                            <span class="label font-english">Phone</span>
+                            <span class="value font-english">+20 123 456 7890</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="icon-box">📍</div>
+                        <div>
+                            <span class="label font-english">Location</span>
+                            <span class="value font-arabic">{{ langService.t({ en: 'Cairo, Egypt', ar: 'القاهرة، مصر' })
+                                }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+                    <a href="#" class="social-btn" aria-label="GitHub">gh</a>
+                    <a href="#" class="social-btn" aria-label="Twitter">tw</a>
+                </div>
+            </div>
+
+            <!-- Form Right Side -->
+            <div class="contact-form-wrapper">
+                <form (ngSubmit)="onSubmit()" class="contact-form">
+                    <div class="form-group">
+                        <label class="font-english">{{ langService.t({ en: 'Name', ar: 'الاسم' }) }}</label>
+                        <input type="text" [(ngModel)]="formData.name" name="name" required class="form-input"
+                            [placeholder]="langService.t({ en: 'Your Name', ar: 'اسمك' })" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-english">{{ langService.t({ en: 'Email', ar: 'البريد الإلكتروني' })
+                            }}</label>
+                        <input type="email" [(ngModel)]="formData.email" name="email" required class="form-input"
+                            [placeholder]="langService.t({ en: 'your.email@example.com', ar: 'بريدك@example.com' })" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-english">{{ langService.t({ en: 'Subject', ar: 'الموضوع' }) }}</label>
+                        <input type="text" [(ngModel)]="formData.subject" name="subject" required class="form-input"
+                            [placeholder]="langService.t({ en: 'Project Discussion', ar: 'مناقشة المشروع' })" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-english">{{ langService.t({ en: 'Message', ar: 'الرسالة' }) }}</label>
+                        <textarea [(ngModel)]="formData.message" name="message" required rows="5" class="form-input"
+                            [placeholder]="langService.t({ en: 'Tell me about your project...', ar: 'أخبرني عن مشروعك...' })"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn font-english">
+                        {{ langService.t({ en: 'Send Message', ar: 'إرسال الرسالة' }) }}
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

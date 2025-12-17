@@ -1,15 +1,24 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-
-import { TranslatePipe } from '../../../core/i18n/translate.pipe';
-import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
-import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ThemeService } from '../../../core/services/theme.service';
+import { LanguageService } from '../../../core/services/language.service';
+import { translations } from '../../../core/utils/translations';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, TranslatePipe, LanguageToggleComponent, ThemeToggleComponent],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+  styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  themeService = inject(ThemeService);
+  langService = inject(LanguageService);
+  nav = translations.nav;
+
+  t(translation: { en: string; ar: string }): string {
+    return this.langService.t(translation);
+  }
+}

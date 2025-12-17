@@ -1,0 +1,29 @@
+<section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title">{{ t(about.title) }}</h2>
+
+        <div class="about-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">{{ stats.experience }}</div>
+                    <div class="stat-label">{{ t(about.yearsExperience) }}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">{{ stats.projects }}</div>
+                    <div class="stat-label">{{ t(about.projectsCompleted) }}</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">{{ stats.clients }}</div>
+                    <div class="stat-label">{{ t(about.happyClients) }}</div>
+                </div>
+            </div>
+
+            <div class="about-text">
+                <h3 class="about-subtitle">{{ t(about.intro) }}</h3>
+                <p class="about-paragraph">{{ t(about.description1) }}</p>
+                <p class="about-paragraph">{{ t(about.description2) }}</p>
+                <p class="about-paragraph">{{ t(about.description3) }}</p>
+            </div>
+        </div>
+    </div>
+</section>

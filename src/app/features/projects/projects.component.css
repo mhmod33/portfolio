@@ -5,9 +5,8 @@
 .projects-page {
     padding: 6rem 0;
     min-height: 100vh;
-    background: #111827;
-    /* Unified Dark Theme */
-    color: #fff;
+    background: var(--bg-primary);
+    color: var(--text-primary);
 }
 
 .page-title {
@@ -15,7 +14,7 @@
     font-weight: 800;
     text-align: center;
     margin-bottom: 5rem;
-    background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -33,13 +32,12 @@
 }
 
 .project-card {
-    background: rgba(31, 41, 55, 0.6);
-    /* Glassy BG */
+    background: var(--bg-secondary);
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 40px -10px var(--shadow-color);
     transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-color);
     position: relative;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -49,9 +47,9 @@
 
 .project-card:hover {
     transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
-    border-color: rgba(0, 212, 255, 0.5);
-    background: rgba(31, 41, 55, 0.8);
+    box-shadow: 0 30px 60px -15px var(--shadow-color);
+    border-color: var(--accent-color);
+    background: var(--bg-tertiary);
 }
 
 .project-card:nth-child(1) {
@@ -75,7 +73,7 @@
     position: relative;
     height: 260px;
     overflow: hidden;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .card-image img {
@@ -92,17 +90,17 @@
 .card-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(17, 24, 39, 0.85);
+    background: var(--bg-primary);
+    opacity: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
     transition: all 0.4s ease;
     backdrop-filter: blur(5px);
 }
 
 .project-card:hover .card-overlay {
-    opacity: 1;
+    opacity: 0.95;
 }
 
 .card-links {
@@ -119,24 +117,24 @@
 .btn-icon {
     width: 55px;
     height: 55px;
-    background: white;
+    background: var(--accent-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #111827;
+    color: white;
     font-weight: bold;
     font-size: 1.3rem;
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px var(--accent-color-20);
 }
 
 .btn-icon:hover {
-    background: #00d4ff;
-    color: white;
+    background: var(--text-primary);
+    color: var(--accent-color);
     transform: scale(1.15) rotate(5deg);
-    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+    box-shadow: 0 10px 25px var(--accent-color-20);
 }
 
 /* Content Section */
@@ -147,16 +145,16 @@
 .card-title {
     font-size: 1.75rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 1rem;
-    background: linear-gradient(to right, #fff, #9ca3af);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .card-description {
-    color: #d1d5db;
+    color: var(--text-secondary);
     line-height: 1.7;
     margin-bottom: 2rem;
     font-size: 1rem;
@@ -169,20 +167,20 @@
 }
 
 .tag {
-    background: rgba(0, 212, 255, 0.1);
-    color: #00d4ff;
+    background: var(--accent-color-10);
+    color: var(--accent-color);
     padding: 0.5rem 1.25rem;
     border-radius: 100px;
     font-size: 0.85rem;
     font-weight: 600;
-    border: 1px solid rgba(0, 212, 255, 0.2);
+    border: 1px solid var(--accent-color-20);
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
 }
 
 .project-card:hover .tag {
-    background: rgba(0, 212, 255, 0.2);
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.1);
+    background: var(--accent-color-20);
+    box-shadow: 0 0 15px var(--accent-color-10);
     transform: translateY(-2px);
 }
 

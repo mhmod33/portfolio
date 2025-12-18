@@ -96,12 +96,12 @@
 
 .detail-item:hover .icon-box {
     background: var(--accent-color);
-    color: white;
+    color: var(--bg-tertiary);
     transform: rotate(5deg);
 }
 
 .detail-item:hover .icon-box svg path {
-    fill: white;
+    fill: var(--bg-tertiary);
 }
 
 .label {
@@ -193,7 +193,7 @@
     margin-top: 1rem;
     padding: 1rem 2rem;
     background: var(--gradient-primary);
-    color: white;
+    color: var(--bg-tertiary);
     border: none;
     border-radius: 12px;
     font-size: 1.1rem;

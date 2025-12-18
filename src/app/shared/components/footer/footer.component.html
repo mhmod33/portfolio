@@ -3,18 +3,15 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="logo">
-                    <span class="logo-text">MS</span>
+                    <span class="logo-text"><img src="logo.png" alt=""></span>
                 </div>
                 <p class="brand-text">{{ personalInfo.title }}</p>
             </div>
 
             <div class="footer-links">
-                <a (click)="scrollToSection('home')">{{ t(nav.home) }}</a>
-                <a (click)="scrollToSection('about')">{{ t(nav.about) }}</a>
-                <a (click)="scrollToSection('skills')">{{ t(nav.skills) }}</a>
-                <a (click)="scrollToSection('projects')">{{ t(nav.projects) }}</a>
-                <a (click)="scrollToSection('experience')">{{ t(nav.experience) }}</a>
-                <a (click)="scrollToSection('contact')">{{ t(nav.contact) }}</a>
+                <div class="footer-bottom">
+                    <p>&copy; {{ currentYear }} {{ personalInfo.name }}. {{ t(footer.rights) }}</p>
+                </div>
             </div>
 
             <div class="footer-social">
@@ -39,8 +36,6 @@
             </div>
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; {{ currentYear }} {{ personalInfo.name }}. {{ t(footer.rights) }}</p>
-        </div>
+        
     </div>
 </footer>

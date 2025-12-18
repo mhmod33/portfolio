@@ -7,7 +7,7 @@
     position: relative;
     overflow: hidden;
     /* Use CSS variable for background */
-    background:radial-gradient(#0b1e5094,#181818);
+    background: radial-gradient(#0b1e5094, #181818);
 }
 
 /* TypeScript Generated Starfield */
@@ -26,47 +26,21 @@
 
 .star {
     position: absolute;
-    background: white;
+    background: var(--accent-color);
     border-radius: 50%;
     min-width: 2px;
     min-height: 2px;
     z-index: 100;
-    box-shadow: 0 0 8px rgb(235, 233, 224);
+    box-shadow: 0 0 8px var(--accent-color);
 }
 
 .star-type-0,
 .star-type-1,
 .star-type-2 {
-    background: white !important;
-    box-shadow: 0 0 10px rgb(235, 233, 224) !important;
+    background: var(--accent-color) !important;
+    box-shadow: 0 0 10px var(--accent-color) !important;
 }
 
-@keyframes twinkle {
-    0% {
-        opacity: 0.3;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0.3;
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px) translateX(0px) rotate(0deg);
-    }
-    25% {
-        transform: translateY(-15px) translateX(8px) rotate(90deg);
-    }
-    50% {
-        transform: translateY(8px) translateX(-8px) rotate(180deg);
-    }
-    75% {
-        transform: translateY(-8px) translateX(15px) rotate(270deg);
-    }
-}
 
 /* Canvas styling */
 #demo-canvas {
@@ -83,6 +57,8 @@
     /* Light mode uses the same variable */
     background: var(--bg-primary);
 }
+
+
 
 .hero::before {
     content: '';

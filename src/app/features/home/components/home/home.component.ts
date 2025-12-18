@@ -7,7 +7,7 @@ import { LanguageService } from '../../../../core/services/language.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeroComponent, AboutComponent, SkillsComponent],
+  imports: [HeroComponent, SkillsComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']

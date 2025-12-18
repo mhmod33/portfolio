@@ -84,8 +84,8 @@
 }
 
 .footer-bottom {
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -21,7 +21,7 @@
     padding: 0.75rem 1.5rem;
     background: var(--bg-secondary);
     /* Fallback */
-    background: color-mix(in srgb, var(--bg-secondary) 80%, transparent);
+    background: color-mix(in srgb, var(--bg-secondary) 20%, transparent);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border-color);

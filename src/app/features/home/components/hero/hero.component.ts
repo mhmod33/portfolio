@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../../../core/services/language.service';
 import { translations } from '../../../../core/utils/translations';
@@ -28,7 +28,8 @@ interface Circle {
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.css']
+  styleUrls: ['./hero.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
   langService = inject(LanguageService);
@@ -48,7 +49,8 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
   // Starfield properties
   private starfield: HTMLElement | null = null;
   private stars: HTMLElement[] = [];
-  private starCount: number = 250;
+  private starCount: number = 150;
+  private shootingStarInterval: any;
 
   t(translation: { en: string; ar: string }): string {
     return this.langService.t(translation);
@@ -58,16 +60,20 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
     window.open('/Mahmoud-Sayed-CV.pdf', '_blank');
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   ngAfterViewInit() {
     this.initStarfield();
     this.initCanvasAnimation();
+    this.startShootingStars();
   }
 
   ngOnDestroy() {
     this.cleanupStars();
     this.cleanupAnimation();
+    if (this.shootingStarInterval) {
+      clearInterval(this.shootingStarInterval);
+    }
   }
 
   private initCanvasAnimation() {
@@ -105,12 +111,12 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
     for (let i = 0; i < this.points.length; i++) {
       const closest: Point[] = [];
       const p1 = this.points[i];
-      
+
       for (let j = 0; j < this.points.length; j++) {
         const p2 = this.points[j];
         if (!(p1 === p2)) {
           let placed = false;
-          
+
           for (let k = 0; k < 5; k++) {
             if (!placed) {
               if (closest[k] === undefined) {
@@ -137,13 +143,13 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
     const heroComponent = this;
     for (const point of this.points) {
       const radius = 2 + Math.random() * 2;
-      const color = 'rgba(156,217,249,0.3)';
+      const color = 'var(--accent-color)';
       point.circle = {
         pos: point,
         radius: radius,
         color: color,
         active: 0,
-        draw: function() {
+        draw: function () {
           if (!this.active || !heroComponent.ctx) return;
           heroComponent.ctx.beginPath();
           heroComponent.ctx.arc(this.pos.x, this.pos.y, this.radius, 0, 2 * Math.PI, false);
@@ -165,7 +171,7 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
   private mouseMove(e: MouseEvent) {
     let posx = 0;
     let posy = 0;
-    
+
     if (e.pageX || e.pageY) {
       posx = e.pageX;
       posy = e.pageY;
@@ -173,7 +179,7 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
       posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
       posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
     }
-    
+
     this.target.x = posx;
     this.target.y = posy;
   }
@@ -189,7 +195,7 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
   private resize() {
     this.width = window.innerWidth;
     this.height = window.innerHeight;
-    
+
     if (this.canvas) {
       this.canvas.width = this.width;
       this.canvas.height = this.height;
@@ -210,11 +216,11 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
   private animate() {
     if (this.animateHeader && this.ctx) {
       this.ctx.clearRect(0, 0, this.width, this.height);
-      
+
       for (const point of this.points) {
         // Detect points in range
         const distance = Math.abs(this.getDistance(this.target, point));
-        
+
         if (distance < 4000) {
           point.active = 0.3;
           if (point.circle) point.circle.active = 0.6;
@@ -233,45 +239,45 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
         if (point.circle) point.circle.draw();
       }
     }
-    
+
     this.animationId = requestAnimationFrame(() => this.animate());
   }
 
   private shiftPoint(p: Point) {
     const newX = p.originX - 50 + Math.random() * 100;
     const newY = p.originY - 50 + Math.random() * 100;
-    
+
     // Simple animation without TweenLite
     const duration = 1000 + Math.random() * 1000;
     const startTime = Date.now();
     const startX = p.x;
     const startY = p.y;
-    
+
     const animate = () => {
       const elapsed = Date.now() - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      
+
       // Easing function (easeInOut)
-      const easeProgress = progress < 0.5 
-        ? 2 * progress * progress 
+      const easeProgress = progress < 0.5
+        ? 2 * progress * progress
         : -1 + (4 - 2 * progress) * progress;
-      
+
       p.x = startX + (newX - startX) * easeProgress;
       p.y = startY + (newY - startY) * easeProgress;
-      
+
       if (progress < 1) {
         requestAnimationFrame(animate);
       } else {
         this.shiftPoint(p);
       }
     };
-    
+
     animate();
   }
 
   private drawLines(p: Point) {
     if (!p.active || !this.ctx) return;
-    
+
     for (const closestPoint of p.closest || []) {
       this.ctx.beginPath();
       this.ctx.moveTo(p.x, p.y);
@@ -289,7 +295,7 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
     if (this.animationId) {
       cancelAnimationFrame(this.animationId);
     }
-    
+
     window.removeEventListener('mousemove', this.mouseMove.bind(this));
     window.removeEventListener('scroll', this.scrollCheck.bind(this));
     window.removeEventListener('resize', this.resize.bind(this));
@@ -299,7 +305,7 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
   private initStarfield() {
     this.starfield = document.getElementById('starfield');
     if (!this.starfield) {
-    
+
       return;
     }
 
@@ -311,7 +317,7 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private createStars() {
     if (!this.starfield) {
-    
+
       return;
     }
 
@@ -319,7 +325,7 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
     this.stars.forEach(star => star.remove());
     this.stars = [];
 
-    
+
     for (let i = 0; i < this.starCount; i++) {
       const star = this.createStar(i);
       if (star) {
@@ -331,35 +337,71 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private createStar(index: number): HTMLElement | null {
     const star = document.createElement('div');
-    
+
     // Random star type for variety
     const starType = Math.floor(Math.random() * 3);
     star.className = `star star-type-${starType}`;
-    
-    // Random properties and positioning in pixels relative to starfield
-    const size = Math.random() * 3 + 1.5; // 1.5 - 4.5px
-    const rect = this.starfield!.getBoundingClientRect();
-    const x = Math.random() * window.innerWidth;
-    const y = Math.random() * window.innerHeight;
 
-    // Apply all styles directly to bypass CSS issues
+    // Random properties and positioning
+    // Use smaller sizes for a more elegant look
+    const size = Math.random() * 2 + 1;
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+
     star.style.position = 'absolute';
     star.style.pointerEvents = 'none';
     star.style.width = `${size}px`;
     star.style.height = `${size}px`;
-    star.style.left = `${Math.round(x)}px`;
-    star.style.top = `${Math.round(y)}px`;
+    star.style.left = `${x}%`;
+    star.style.top = `${y}%`;
     star.style.background = 'var(--accent-color)';
     star.style.borderRadius = '50%';
-    star.style.zIndex = '1000';
+    star.style.zIndex = '5';
+    star.style.opacity = (Math.random() * 0.7 + 0.3).toString();
+
+    // Add glow
+    star.style.boxShadow = `0 0 ${size * 2}px var(--accent-color)`;
 
     // Random animation durations for variety
-    const twinkle = (1.4 + Math.random() * 1.6).toFixed(2);
-    const floatDur = (7 + Math.random() * 5).toFixed(2);
-    const delay = (Math.random() * 2).toFixed(2);
-    star.style.animation = `twinkle ${twinkle}s ease-in-out ${delay}s infinite alternate, float ${floatDur}s ease-in-out 0s infinite`;
+    const duration = (3 + Math.random() * 4).toFixed(2);
+    const delay = (Math.random() * 5).toFixed(2);
+
+    star.style.animation = `star-shimmer ${duration}s ease-in-out ${delay}s infinite`;
 
     return star;
+  }
+
+  private startShootingStars() {
+    this.shootingStarInterval = setInterval(() => {
+      if (Math.random() > 0.7) { // 30% chance every 2 seconds
+        this.createShootingStar();
+      }
+    }, 2000);
+  }
+
+  private createShootingStar() {
+    if (!this.starfield) return;
+
+    const star = document.createElement('div');
+    star.className = 'shooting-star';
+
+    // Random vertical position
+    const top = Math.random() * 50; // Top half of screen
+    const left = 50 + Math.random() * 50; // Random starting point from right side
+
+    star.style.top = `${top}%`;
+    star.style.left = `${left}%`;
+
+    // Random duration 2-4s
+    const duration = 2 + Math.random() * 2;
+    star.style.animationDuration = `${duration}s`;
+
+    this.starfield.appendChild(star);
+
+    // Remove after animation completes
+    setTimeout(() => {
+      star.remove();
+    }, duration * 1000);
   }
 
   private cleanupStars() {

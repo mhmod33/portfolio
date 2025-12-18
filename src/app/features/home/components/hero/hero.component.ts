@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, OnDestroy } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../../../core/services/language.service';
 import { translations } from '../../../../core/utils/translations';
@@ -30,7 +30,7 @@ interface Circle {
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.css']
 })
-export class HeroComponent implements OnInit, OnDestroy {
+export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
   langService = inject(LanguageService);
   hero = translations.hero;
   personalInfo = portfolioData.personalInfo;
@@ -45,10 +45,10 @@ export class HeroComponent implements OnInit, OnDestroy {
   private animateHeader = true;
   private animationId: number | null = null;
 
-  // Star properties
+  // Starfield properties
   private starfield: HTMLElement | null = null;
   private stars: HTMLElement[] = [];
-  private starCount = 200;
+  private starCount: number = 250;
 
   t(translation: { en: string; ar: string }): string {
     return this.langService.t(translation);
@@ -58,65 +58,16 @@ export class HeroComponent implements OnInit, OnDestroy {
     window.open('/Mahmoud-Sayed-CV.pdf', '_blank');
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ngAfterViewInit() {
     this.initStarfield();
     this.initCanvasAnimation();
   }
 
   ngOnDestroy() {
-    this.cleanupAnimation();
     this.cleanupStars();
-  }
-
-  private initStarfield() {
-    this.starfield = document.getElementById('starfield');
-    if (!this.starfield) return;
-
-    // Create stars dynamically
-    for (let i = 0; i < this.starCount; i++) {
-      this.createStar(i);
-    }
-  }
-
-  private createStar(index: number) {
-    if (!this.starfield) return;
-
-    const star = document.createElement('div');
-    star.className = 'star';
-    
-    // Random properties
-    const size = Math.random() * 3 + 1; // 1-4px
-    const x = Math.random() * 100; // 0-100%
-    const y = Math.random() * 100; // 0-100%
-    const opacity = Math.random() * 0.8 + 0.2; // 0.2-1.0
-    const animationDuration = Math.random() * 20 + 10; // 10-30s
-    const animationDelay = Math.random() * 5; // 0-5s
-    
-    // Apply styles
-    star.style.width = `${size}px`;
-    star.style.height = `${size}px`;
-    star.style.left = `${x}%`;
-    star.style.top = `${y}%`;
-    star.style.opacity = opacity.toString();
-    star.style.animationDuration = `${animationDuration}s`;
-    star.style.animationDelay = `${animationDelay}s`;
-    
-    // Add glow effect for larger stars
-    if (size > 2.5) {
-      star.style.boxShadow = `0 0 ${size * 2}px rgba(255, 255, 255, ${opacity * 0.5})`;
-    }
-    
-    this.starfield.appendChild(star);
-    this.stars.push(star);
-  }
-
-  private cleanupStars() {
-    this.stars.forEach(star => {
-      if (star.parentNode) {
-        star.parentNode.removeChild(star);
-      }
-    });
-    this.stars = [];
+    this.cleanupAnimation();
   }
 
   private initCanvasAnimation() {
@@ -243,6 +194,10 @@ export class HeroComponent implements OnInit, OnDestroy {
       this.canvas.width = this.width;
       this.canvas.height = this.height;
     }
+
+    if (this.starfield) {
+      this.createStars();
+    }
   }
 
   private initAnimation() {
@@ -338,5 +293,69 @@ export class HeroComponent implements OnInit, OnDestroy {
     window.removeEventListener('mousemove', this.mouseMove.bind(this));
     window.removeEventListener('scroll', this.scrollCheck.bind(this));
     window.removeEventListener('resize', this.resize.bind(this));
+  }
+
+  // Starfield methods
+  private initStarfield() {
+    this.starfield = document.getElementById('starfield');
+    if (!this.starfield) return;
+
+    // Debug: Check starfield dimensions
+    const rect = this.starfield.getBoundingClientRect();
+
+
+    this.createStars();
+  }
+
+  private createStars() {
+    if (!this.starfield) return;
+
+    // Clear existing stars
+    this.stars.forEach(star => star.remove());
+    this.stars = [];
+
+    for (let i = 0; i < this.starCount; i++) {
+      const star = this.createStar(i);
+      if (star) {
+        this.stars.push(star);
+        this.starfield.appendChild(star);
+      }
+    }
+
+  }
+
+  private createStar(index: number): HTMLElement | null {
+    const star = document.createElement('div');
+    star.className = 'star';
+    
+    // Random properties and positioning in pixels relative to starfield
+    const size = Math.random() * 3 + 1.5; // 1.5 - 4.5px
+    const rect = this.starfield!.getBoundingClientRect();
+    const x = Math.random() * rect.width;
+    const y = Math.random() * rect.height;
+
+    // Apply styles
+    star.style.position = 'absolute';
+    star.style.pointerEvents = 'none';
+    star.style.borderRadius = '50%';
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    star.style.left = `${Math.round(x)}px`;
+    star.style.top = `${Math.round(y)}px`;
+    star.style.background = '#ffffff';
+    star.style.boxShadow = '0 0 8px rgba(255, 255, 255, 0.8)';
+
+    // Animate (same white color): twinkle + gentle float
+    const twinkle = (1.4 + Math.random() * 1.6).toFixed(2);
+    const floatDur = (7 + Math.random() * 5).toFixed(2);
+    const delay = (Math.random() * 2).toFixed(2);
+    star.style.animation = `twinkle ${twinkle}s ease-in-out ${delay}s infinite alternate, float ${floatDur}s ease-in-out 0s infinite`;
+    
+    return star;
+  }
+
+  private cleanupStars() {
+    this.stars.forEach(star => star.remove());
+    this.stars = [];
   }
 }

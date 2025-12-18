@@ -78,7 +78,7 @@
 
 .footer-social a:hover {
     background: var(--accent-color);
-    color: white;
+    color: var(--bg-tertiary);
     border-color: var(--accent-color);
     transform: translateY(-4px);
 }

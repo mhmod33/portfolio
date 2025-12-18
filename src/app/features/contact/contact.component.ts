@@ -23,7 +23,6 @@ export class ContactComponent {
   langService = inject(LanguageService);
 
   onSubmit() {
-    console.log('Form submitted:', this.formData);
     // Here you would typically send the data to a backend service
     alert(this.langService.t({
       en: 'Thank you for your message! I will get back to you soon.',

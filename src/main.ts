@@ -15,4 +15,5 @@ bootstrapApplication(AppComponent, {
     LanguageService,
     provideZonelessChangeDetection()
   ]
+  
 });

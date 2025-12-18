@@ -53,7 +53,7 @@
 .image-wrapper::before {
     content: '';
     position: absolute;
-    inset: -20px;
+    inset: -15px;
     border: 2px solid var(--accent-color);
     border-radius: 40px;
     opacity: 0.3;
@@ -71,10 +71,10 @@
 
 .experience-badge {
     position: absolute;
-    bottom: 30px;
-    right: -30px;
+    bottom: 20px;
+    right: -20px;
     background: var(--bg-secondary);
-    padding: 1.5rem;
+    padding: 1.2rem;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     display: flex;
@@ -149,12 +149,20 @@
 /* Stats Grid */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
     margin-bottom: 3rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid var(--border-color);
+    width: 100%;
 }
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 .stat-card {
     display: flex;
@@ -200,6 +208,7 @@
     font-size: 1.05rem;
     transition: all 0.3s ease;
     text-decoration: none;
+    display: inline-block;
 }
 
 .btn-primary {
@@ -225,4 +234,96 @@
     border-color: var(--text-primary);
     color: var(--bg-primary);
     background: var(--text-primary);
+}
+
+@media (max-width: 967px) {
+    .image-wrapper {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-page {
+        padding: 4rem 0;
+    }
+
+    .page-title {
+        margin-bottom: 3rem;
+    }
+
+    .about-content {
+        gap: 3rem;
+    }
+
+    .profile-section {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .about-page {
+        padding: 3rem 0;
+    }
+
+    .profile-section {
+        padding: 0 1rem;
+    }
+
+
+    .role-title {
+        font-size: 1.8rem;
+    }
+
+    .bio-text {
+        font-size: 1rem;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+
+
+    .stat-card {
+        padding: 1rem;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .experience-badge {
+        right: 0;
+        bottom: -20px;
+        padding: 0.8rem 1.2rem;
+        flex-direction: row;
+        gap: 0.8rem;
+    }
+
+    .years {
+        font-size: 1.5rem;
+    }
+
+
+    .image-wrapper::before {
+        inset: -10px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem 1.5rem;
+    }
 }

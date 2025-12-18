@@ -169,38 +169,86 @@
         "ecommerce": {
           "name": "E-Commerce Platform",
           "description": "Full-stack web application with product catalog, shopping cart, and payment integration",
-          "tech": ["Angular", "Node.js", "MongoDB", "Stripe API"],
-          "links": ["GitHub", "Live Demo"]
+          "tech": [
+            "Angular",
+            "Node.js",
+            "MySql",
+            "Stripe API"
+          ],
+          "links": [
+            "GitHub",
+            "Live Demo"
+          ]
         },
         "taskManagement": {
           "name": "Task Management System",
           "description": "Collaborative project management tool with real-time updates and team features",
-          "tech": ["Angular", "Laravel", "MySQL", "WebSocket"],
-          "links": ["GitHub", "Live Demo"]
+          "tech": [
+            "Angular",
+            "Laravel",
+            "MySQL",
+            "WebSocket"
+          ],
+          "links": [
+            "GitHub",
+            "Live Demo"
+          ]
         },
         "apiDashboard": {
           "name": "API Dashboard",
           "description": "Analytics dashboard for monitoring API performance and usage metrics",
-          "tech": ["React", "TypeScript", "D3.js", "REST API"],
-          "links": ["GitHub", "Documentation"]
+          "tech": [
+            "Angular.js",
+            "TypeScript",
+            "D3.js",
+            "REST API"
+          ],
+          "links": [
+            "GitHub",
+            "Documentation"
+          ]
         },
         "cms": {
           "name": "Content Management System",
           "description": "Flexible CMS with custom content types and role-based permissions",
-          "tech": ["Angular", "Laravel", "PostgreSQL", "Redis"],
-          "links": ["GitHub", "Live Demo"]
+          "tech": [
+            "Angular",
+            "Laravel",
+            "MySql",
+            "Redis"
+          ],
+          "links": [
+            "GitHub",
+            "Live Demo"
+          ]
         },
         "chatApp": {
           "name": "Real-time Chat Application",
           "description": "Messaging platform with channels, file sharing, and push notifications",
-          "tech": ["Angular", "Socket.io", "Express", "JWT Auth"],
-          "links": ["GitHub", "Live Demo"]
+          "tech": [
+            "Angular",
+            "Socket.io",
+            "Express",
+            "JWT Auth"
+          ],
+          "links": [
+            "GitHub",
+            "Live Demo"
+          ]
         },
         "weatherDashboard": {
           "name": "Weather Dashboard",
           "description": "Weather application with forecasts, maps, and location-based services",
-          "tech": ["Vue.js", "OpenWeather API", "Leaflet Maps", "PWA"],
-          "links": ["GitHub", "Live Demo"]
+          "tech": [
+            "Angular.js",
+            "OpenWeather API",
+            "Leaflet Maps",
+            "PWA"
+          ],
+          "links": [
+            "GitHub",
+            "Live Demo"
+          ]
         }
       }
     },

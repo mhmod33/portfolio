@@ -298,22 +298,28 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
   // Starfield methods
   private initStarfield() {
     this.starfield = document.getElementById('starfield');
-    if (!this.starfield) return;
+    if (!this.starfield) {
+    
+      return;
+    }
 
     // Debug: Check starfield dimensions
     const rect = this.starfield.getBoundingClientRect();
-
 
     this.createStars();
   }
 
   private createStars() {
-    if (!this.starfield) return;
+    if (!this.starfield) {
+    
+      return;
+    }
 
     // Clear existing stars
     this.stars.forEach(star => star.remove());
     this.stars = [];
 
+    
     for (let i = 0; i < this.starCount; i++) {
       const star = this.createStar(i);
       if (star) {
@@ -321,36 +327,38 @@ export class HeroComponent implements OnInit, OnDestroy, AfterViewInit {
         this.starfield.appendChild(star);
       }
     }
-
   }
 
   private createStar(index: number): HTMLElement | null {
     const star = document.createElement('div');
-    star.className = 'star';
+    
+    // Random star type for variety
+    const starType = Math.floor(Math.random() * 3);
+    star.className = `star star-type-${starType}`;
     
     // Random properties and positioning in pixels relative to starfield
     const size = Math.random() * 3 + 1.5; // 1.5 - 4.5px
     const rect = this.starfield!.getBoundingClientRect();
-    const x = Math.random() * rect.width;
-    const y = Math.random() * rect.height;
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
 
-    // Apply styles
+    // Apply all styles directly to bypass CSS issues
     star.style.position = 'absolute';
     star.style.pointerEvents = 'none';
-    star.style.borderRadius = '50%';
     star.style.width = `${size}px`;
     star.style.height = `${size}px`;
     star.style.left = `${Math.round(x)}px`;
     star.style.top = `${Math.round(y)}px`;
-    star.style.background = '#ffffff';
-    star.style.boxShadow = '0 0 8px rgba(255, 255, 255, 0.8)';
+    star.style.background = 'var(--accent-color)';
+    star.style.borderRadius = '50%';
+    star.style.zIndex = '1000';
 
-    // Animate (same white color): twinkle + gentle float
+    // Random animation durations for variety
     const twinkle = (1.4 + Math.random() * 1.6).toFixed(2);
     const floatDur = (7 + Math.random() * 5).toFixed(2);
     const delay = (Math.random() * 2).toFixed(2);
     star.style.animation = `twinkle ${twinkle}s ease-in-out ${delay}s infinite alternate, float ${floatDur}s ease-in-out 0s infinite`;
-    
+
     return star;
   }
 

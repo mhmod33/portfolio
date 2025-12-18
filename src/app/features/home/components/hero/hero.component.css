@@ -7,7 +7,7 @@
     position: relative;
     overflow: hidden;
     /* Use CSS variable for background */
-    background: var(--bg-primary);
+    background:radial-gradient(#0b1e5094,#181818);
 }
 
 /* TypeScript Generated Starfield */
@@ -20,7 +20,7 @@
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    z-index: 1000;
+    z-index: 5;
     overflow: hidden;
 }
 
@@ -28,26 +28,17 @@
     position: absolute;
     background: white;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     min-width: 2px;
     min-height: 2px;
-    z-index: 2;
-    animation: twinkle 2s ease-in-out infinite alternate, float 10s ease-in-out infinite;
+    z-index: 100;
+    box-shadow: 0 0 8px rgb(235, 233, 224);
 }
 
-.star-type-0 {
-    background: #ffffff;
-    box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
-}
-
-.star-type-1 {
-    background: #ffd700;
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
-}
-
+.star-type-0,
+.star-type-1,
 .star-type-2 {
-    background: #87ceeb;
-    box-shadow: 0 0 10px rgba(135, 206, 235, 0.7);
+    background: white !important;
+    box-shadow: 0 0 10px rgb(235, 233, 224) !important;
 }
 
 @keyframes twinkle {
@@ -64,16 +55,16 @@
 
 @keyframes float {
     0%, 100% {
-        transform: translateY(0px) translateX(0px);
+        transform: translateY(0px) translateX(0px) rotate(0deg);
     }
     25% {
-        transform: translateY(-10px) translateX(5px);
+        transform: translateY(-15px) translateX(8px) rotate(90deg);
     }
     50% {
-        transform: translateY(5px) translateX(-5px);
+        transform: translateY(8px) translateX(-8px) rotate(180deg);
     }
     75% {
-        transform: translateY(-5px) translateX(10px);
+        transform: translateY(-8px) translateX(15px) rotate(270deg);
     }
 }
 

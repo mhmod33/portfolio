@@ -139,7 +139,7 @@
 
 .social-btn:hover {
     background: var(--accent-color);
-    color: white;
+    color: var(--bg-tertiary);
     transform: translateY(-5px);
     border-color: var(--accent-color);
 }

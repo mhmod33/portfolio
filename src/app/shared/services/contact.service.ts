@@ -6,7 +6,7 @@ import { ContactForm as contactForm } from '../interfaces/contact-form';
   providedIn: 'root',
 })
 export class ContactService {
-  api='http://mahmoud.runasp.net/api';
+  api='https://mahmoud.runasp.net/api';
   constructor(
     private http:HttpClient
   ) {}

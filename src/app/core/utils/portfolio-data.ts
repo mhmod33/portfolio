@@ -12,7 +12,7 @@ export const portfolioData = {
   },
 
   stats: {
-    experience: '6+',
+    experience: '1+',
     projects: '20+',
     clients: '15+'
   },
@@ -41,61 +41,91 @@ export const portfolioData = {
 
   projects: [
     {
-      title: 'Real Estate Platform',
-      description: 'Full-stack real estate platform for listing and managing properties with admin panel',
-      technologies: ['Laravel', 'Angular', 'MySQL', 'Bootstrap'],
-      impact: 'Reduced admin time by 30%',
-      github: '#',
-      type: 'Graduation Project'
+      title: 'GX Group MEA',
+      description: 'Corporate website for GX Group MEA.',
+      technologies: ['Web Development', 'Pure JS'],
+      link: 'https://gxgroup-mea.com/',
+      image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=GX+Group+MEA',
+      type: 'Development'
     },
     {
-      title: 'Cafeteria Management System',
-      description: 'Web-based system to manage cafeteria orders with CRUD operations',
-      technologies: ['Laravel', 'MySQL', 'Bootstrap'],
-      impact: 'Reduced order processing time by 40%',
-      github: '#',
-      type: 'ITI Project'
+      title: 'Hero Tech',
+      description: 'Technology solutions website for Hero Tech.',
+      technologies: ['Web Development', 'Pure JS'],
+      link: 'https://hero-tech.us/',
+      image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Hero+Tech',
+      type: 'Development'
     },
     {
-      title: 'E-commerce Platform',
-      description: 'Complete online store with authentication, cart, and order management',
-      technologies: ['PHP Native', 'MySQL', 'Bootstrap'],
-      github: '#',
-      type: 'Full Stack'
+      title: 'Smart Inspection',
+      description: 'Governmental project for inspection management.',
+      technologies: ['Angular', 'TypeScript', 'Governmental'],
+      link: 'https://smart-inspection.gate-digital.com/auth/login',
+      image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Smart+Inspection',
+      type: 'Development'
     },
     {
-      title: 'E-commerce RESTful API',
-      description: 'Robust backend API for online store with authentication and order management',
-      technologies: ['Node.js', 'Express.js', 'MySQL'],
-      impact: 'Improved response times by 40%',
-      github: '#',
-      type: 'Backend'
+      title: 'Smart Excellence',
+      description: 'Governmental project for excellence management.',
+      technologies: ['Angular', 'TypeScript', 'Governmental'],
+      link: 'https://smartexcellence.runasp.net/home',
+      image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Smart+Excellence',
+      type: 'Development'
     },
     {
-      title: 'Angular E-commerce Frontend',
-      description: 'Responsive Angular application with product browsing and cart management',
-      technologies: ['Angular', 'TypeScript', 'Bootstrap'],
-      github: '#',
-      type: 'Frontend'
+      title: 'Eco Office',
+      description: 'Governmental project for office management.',
+      technologies: ['Angular', 'TypeScript', 'Governmental'],
+      link: 'https://eco-office.gate-digital.com/auth/login',
+      image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Eco+Office',
+      type: 'Development'
+    },
+    {
+      title: 'Real Estate Dashboard',
+      description: 'Real estate dashboard case study applying design thinking',
+      technologies: ['UI/UX Design', 'Figma'],
+      link: 'https://www.behance.net/gallery/218456207/Real-Estate-Dashboard-Case-Study-',
+      image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Real+Estate+Dashboard',
+      type: 'UI/UX Design'
+    },
+    {
+      title: 'UI/UX Animation',
+      description: 'Animation project showcasing interaction design.',
+      technologies: ['UI/UX Design', 'Animation'],
+      link: 'https://www.behance.net/gallery/178325049/UIUX-animation',
+      image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=UI/UX+Animation',
+      type: 'UI/UX Design'
+    },
+    {
+      title: 'Furniture Landing Page',
+      description: 'Product landing page design for furniture.',
+      technologies: ['UI/UX Design', 'Figma'],
+      link: 'https://www.behance.net/gallery/176323285/UIUX-Design-Furniture-product-landing-page',
+      image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Furniture+Landing+Page',
+      type: 'UI/UX Design'
     },
     {
       title: 'Moqayada Mobile App',
       description: 'Mobile application for freelance jobs with modern UX (30+ screens)',
       technologies: ['UI/UX Design', 'Figma'],
-      type: 'UI/UX Design',
-      behance: '#'
+      link: 'https://www.behance.net/gallery/174374825/UIUX-mobile-app-design-for-Moqayada-app',
+      image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Moqayada+App',
+      type: 'UI/UX Design'
     },
     {
-      title: 'RealEase Dashboard',
-      description: 'Real estate dashboard case study applying design thinking',
+      title: 'Breast Cancer Detection',
+      description: 'Medical mobile app design for breast cancer detection.',
       technologies: ['UI/UX Design', 'Figma'],
-      type: 'UI/UX Design',
-      behance: '#'
+      link: 'https://www.behance.net/gallery/162992365/UIUX-design-Breast-cancer-detection-mobile-app',
+      image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Breast+Cancer+Detection',
+      type: 'UI/UX Design'
     },
     {
-      title: 'E-commerce Platforms',
-      description: 'Designed multiple e-commerce platforms including Whitesky and Greeniblox',
+      title: 'Mobile Application Design',
+      description: 'Modern mobile application user interface design.',
       technologies: ['UI/UX Design', 'Figma'],
+      link: 'https://www.behance.net/gallery/213940783/UIUX-Design-for-Mobile-Application',
+      image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Mobile+App+Design',
       type: 'UI/UX Design'
     }
   ],

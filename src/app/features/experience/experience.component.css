@@ -295,6 +295,55 @@
 
 /* Staggered Delays using specific timeline item indices */
 
+/* Current Job Highlight */
+.current-job .timeline-content {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 25px -5px rgba(var(--accent-rgb, 100, 255, 218), 0.3);
+    background: linear-gradient(145deg, var(--bg-secondary) 0%, rgba(var(--accent-rgb, 100, 255, 218), 0.05) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle glow internal animation for card */
+.current-job .timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* Enhanced Dot for Current Job */
+.current-job .timeline-dot {
+    background: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color);
+    animation: pulse-dot 2s infinite;
+    z-index: 5;
+}
+
+/* Remove default ripple and add stronger pulse */
+.current-job .timeline-dot::after {
+    display: none;
+}
+
+@keyframes pulse-dot {
+    0% {
+        box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(100, 255, 218, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(100, 255, 218, 0);
+    }
+}
+
+
 .timeline-item {
     animation: cardEntrance 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }

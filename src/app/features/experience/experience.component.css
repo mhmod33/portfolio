@@ -1,384 +1,133 @@
-:host {
-    display: block;
-}
-
 .experience-page {
-    padding: 6rem 0;
-    min-height: 100vh;
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    overflow: hidden;
-    /* Prevent spill from animations */
-}
-
-.page-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-    opacity: 0;
-    animation: titleReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-
-.page-subtitle {
-    text-align: center;
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    margin-bottom: 5rem;
-    opacity: 0;
-    animation: fadeIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
-}
-
-.timeline {
     position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding-bottom: 4rem;
-}
-
-/* Vertical Line with Draw Animation */
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 20px;
-    width: 2px;
-    background: var(--accent-color);
-    transform-origin: top;
-    transform: scaleY(0);
-    animation: drawLine 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 4rem;
-    padding-left: 3.5rem;
-    opacity: 0;
-    /* Will be animated with forwards */
-}
-
-/* Dots with Pop Animation */
-.timeline-dot {
-    position: absolute;
-    left: 17px;
-    top: 0;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent-color);
-    z-index: 2;
-    box-shadow: 0 0 0 4px var(--bg-primary);
-    transform: scale(0);
-    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-}
-
-.timeline-dot::after {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    border: 1px solid var(--accent-color-20);
-    animation: ripple 2s infinite;
-}
-
-.timeline-content {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 2rem;
-    position: relative;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 6px -1px var(--shadow-color);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    transform: translateY(20px);
-}
-
-.timeline-content:hover {
-    border-color: var(--accent-color);
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 20px 25px -5px var(--shadow-color);
-    background: var(--bg-tertiary);
-}
-
-/* Card Content Styling */
-.role {
-    font-size: 1.25rem;
-    font-weight: 700;
+    z-index: 100;
+    background-color: var(--bg-primary);
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    padding: 150px 0 90px;
 }
 
-.company {
-    font-size: 1rem;
-    color: var(--accent-color);
-    font-weight: 600;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    align-items: center;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.meta span {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-
-.duties {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    font-weight: 300;
-}
-
-/* Desktop Styles */
-@media (min-width: 768px) {
-    .timeline::before {
-        left: 50%;
-        transform: translateX(-50%) scaleY(0);
-        /* Start scaled 0 */
+@media(max-width: 1100px) {
+    .experience-page {
+        padding-top: 50px;
     }
+}
 
-    .timeline-item {
-        padding-left: 0;
-        margin-bottom: 0;
-        min-height: 200px;
+.experience-title-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.experience-huge-title {
+    font-family: var(--font-display);
+    font-size: clamp(80px, 15vw, 300px);
+    font-weight: 700;
+    letter-spacing: -8px;
+    line-height: 0.8;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.experience__wrapper {
+    border-top: 1px solid var(--text-primary);
+    padding-top: 110px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media(max-width: 1100px) {
+    .experience__wrapper {
+        border: none;
+        padding-top: 40px;
+    }
+}
+
+.exp-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.exp-item:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media(max-width: 991px) {
+    .exp-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.exp-meta {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    font-family: var(--font-primary);
+    text-transform: uppercase;
+}
+
+@media(max-width: 991px) {
+    .exp-meta {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.exp-year {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.exp-company {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--text-secondary);
+}
+
+.exp-item:hover .exp-company {
+    color: var(--bg-primary);
+    opacity: 0.7;
+}
+
+.exp-content {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+@media(max-width: 991px) {
+    .exp-content {
         width: 100%;
     }
-
-    .timeline-dot {
-        left: 50%;
-        transform: translateX(-50%) scale(0);
-        top: 2rem;
-    }
-
-    .timeline-content {
-        width: 45%;
-    }
-
-    /* Odd items: Left */
-    .timeline-item:nth-child(odd) .timeline-content {
-        float: left;
-        text-align: right;
-        margin-right: 50%;
-        transform-origin: right center;
-    }
-
-    .timeline-item:nth-child(odd) .company,
-    .timeline-item:nth-child(odd) .meta {
-        justify-content: flex-end;
-    }
-
-    /* Even items: Right */
-    .timeline-item:nth-child(even) .timeline-content {
-        float: right;
-        text-align: left;
-        margin-left: 50%;
-        margin-top: 4rem;
-        transform-origin: left center;
-    }
-
-    .timeline-item::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
 }
 
-/* New Modern Animations */
-
-@keyframes titleReveal {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-        filter: blur(10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-    }
+.exp-role {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4vw, 60px);
+    font-weight: 700;
+    line-height: 0.9;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
-@keyframes drawLine {
-    0% {
-        transform: translateX(-50%) scaleY(0);
-    }
-
-    /* Center on desktop? Need to handle mobile/desktop transform diff in keyframes or via class */
-    100% {
-        transform: translateX(-50%) scaleY(1);
-    }
+.exp-desc {
+    font-family: var(--font-primary);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    max-width: 600px;
 }
 
-/* Separate drawLine for mobile since translate is different */
-@media (max-width: 767px) {
-    @keyframes drawLine {
-        0% {
-            transform: scaleY(0);
-        }
-
-        100% {
-            transform: scaleY(1);
-        }
-    }
+.exp-item:hover .exp-desc {
+    color: var(--bg-primary);
+    opacity: 0.8;
 }
-
-@keyframes popIn {
-    0% {
-        transform: translateX(-50%) scale(0);
-    }
-
-    100% {
-        transform: translateX(-50%) scale(1);
-    }
-}
-
-/* Mobile PopIn needs different translate */
-@media (max-width: 767px) {
-    @keyframes popIn {
-        0% {
-            transform: scale(0);
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
-}
-
-@keyframes cardEntrance {
-    0% {
-        opacity: 0;
-        transform: translateY(40px) scale(0.9);
-        filter: blur(10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-    }
-}
-
-@keyframes ripple {
-    0% {
-        transform: scale(1);
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: scale(2.5);
-        opacity: 0;
-    }
-}
-
-/* Staggered Delays using specific timeline item indices */
-
-/* Current Job Highlight */
-.current-job .timeline-content {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 25px -5px rgba(var(--accent-rgb, 100, 255, 218), 0.3);
-    background: linear-gradient(145deg, var(--bg-secondary) 0%, rgba(var(--accent-rgb, 100, 255, 218), 0.05) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Subtle glow internal animation for card */
-.current-job .timeline-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--accent-color);
-    box-shadow: 0 0 15px var(--accent-color);
-}
-
-/* Enhanced Dot for Current Job */
-.current-job .timeline-dot {
-    background: var(--accent-color);
-    box-shadow: 0 0 15px var(--accent-color);
-    animation: pulse-dot 2s infinite;
-    z-index: 5;
-}
-
-/* Remove default ripple and add stronger pulse */
-.current-job .timeline-dot::after {
-    display: none;
-}
-
-@keyframes pulse-dot {
-    0% {
-        box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.7);
-    }
-
-    70% {
-        box-shadow: 0 0 0 15px rgba(100, 255, 218, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(100, 255, 218, 0);
-    }
-}
-
-
-.timeline-item {
-    animation: cardEntrance 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-
-.timeline-item:nth-child(1) {
-    animation-delay: 0.8s;
-}
-
-.timeline-item:nth-child(1) .timeline-dot {
-    animation-delay: 0.8s;
-}
-
-.timeline-item:nth-child(2) {
-    animation-delay: 1.1s;
-}
-
-.timeline-item:nth-child(2) .timeline-dot {
-    animation-delay: 1.1s;
-}
-
-.timeline-item:nth-child(3) {
-    animation-delay: 1.4s;
-}
-
-.timeline-item:nth-child(3) .timeline-dot {
-    animation-delay: 1.4s;
-}
-
-.timeline-item:nth-child(4) {
-    animation-delay: 1.7s;
-}
-
-.timeline-item:nth-child(4) .timeline-dot {
-    animation-delay: 1.7s;
-}
-
-/* Connecting Lines (Desktop optional fancy addition) */
-/* Could add :after on timeline-content to draw line to center, but dotted line in visual was minimal */

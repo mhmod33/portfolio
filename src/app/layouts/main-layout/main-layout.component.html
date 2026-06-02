@@ -1,6 +1,20 @@
-<div class="app min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 pb-32"
+<div class="app min-h-screen transition-colors duration-300 pb-32"
     [class.font-arabic]="langService.currentLanguage() === 'ar'"
     [class.font-english]="langService.currentLanguage() === 'en'">
+    <!-- Global Interactive Canvas -->
+    <canvas id="global-demo-canvas"></canvas>
+
+    <!-- 4-Column Grid Line Overlay -->
+    <div class="grid-overlay" aria-hidden="true">
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+
     <app-header />
     <main class="main-content">
         <router-outlet></router-outlet>

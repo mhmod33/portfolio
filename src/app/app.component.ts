@@ -18,6 +18,6 @@ export class AppComponent implements OnInit {
     // Simulate initial app loading
     setTimeout(() => {
       this.isLoading.set(false);
-    }, 1500);
+    }, 3800);
   }
 }

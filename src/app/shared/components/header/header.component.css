@@ -1,256 +1,268 @@
-/* Header Container - Positioning */
 .header {
     position: fixed;
-    bottom: 2rem;
+    top: 0;
     left: 0;
-    right: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    pointer-events: none;
-    /* Let clicks pass through outside the nav */
-    padding: 0 1rem;
-}
-
-/* Glass Dock */
-.glass-nav {
+    width: 100%;
+    padding: 37px 0;
+    z-index: 10000;
+    mix-blend-mode: difference;
+    color: #efefef;
     pointer-events: auto;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    background: var(--bg-secondary);
-    /* Fallback */
-    background: color-mix(in srgb, var(--bg-secondary) 20%, transparent);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--border-color);
-    border-radius: 9999px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 0 1px var(--border-color);
-    transition: all 0.3s ease;
-    animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.glass-nav:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 1px var(--border-color);
-    transform: translateY(-2px);
+@media(max-width: 1100px) {
+    .header {
+        padding: 25px 0;
+    }
 }
 
-/* Navigation Menu */
-.nav-menu {
+@media(max-width: 768px) {
+    .header {
+        color: var(--text-color);
+        mix-blend-mode: normal;
+    }
+}
+
+.header__wrapper {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    width: 100%;
+}
+
+@media(max-width: 768px) {
+    .header__wrapper {
+        justify-content: space-between;
+    }
+}
+
+.header-logo {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -3px;
+    line-height: 0.7;
+    text-transform: uppercase;
+    width: 135px;
+    display: block;
+}
+
+@media(max-width: 1100px) {
+    .header-logo {
+        font-size: 24px;
+        letter-spacing: -1px;
+        width: 90px;
+        position: relative;
+        z-index: 101;
+    }
+}
+
+.header__menu {
+    margin: 0 0 0 225px;
+}
+
+@media(max-width: 1100px) {
+    .header__menu {
+        margin: 0 0 0 100px;
+    }
+}
+
+@media(max-width: 991px) {
+    .header__menu {
+        margin: 0 0 0 30px;
+    }
+}
+
+@media(max-width: 768px) {
+    .header__menu {
+        display: none; /* Hide for now, requires complex mobile menu */
+    }
+}
+
+.header__menu ul {
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-/* Nav Items */
-.nav-menu li a {
+.header__menu ul li {
+    margin-right: 84px;
+}
+
+.header__menu ul li:last-child {
+    margin-right: 0;
+}
+
+@media(max-width: 1100px) {
+    .header__menu ul li {
+        margin-right: 40px;
+    }
+}
+
+@media(max-width: 991px) {
+    .header__menu ul li {
+        margin-right: 10px;
+    }
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-primary);
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 0.99;
+    text-transform: uppercase;
+    padding: 0 35px;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    color: var(--text-primary);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Remove tap highlight on mobile */
-    -webkit-tap-highlight-color: transparent;
-}
-
-/* Icons */
-.nav-menu li a svg {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s ease;
-    stroke: var(--text-primary);
-}
-
-/* Hover Effects */
-.nav-menu li a:hover {
-    color: var(--accent-color);
-    background: var(--bg-tertiary);
-    box-shadow: 0 0 15px var(--accent-color-10);
-}
-
-.nav-menu li a:hover svg {
-    transform: scale(1.1);
-    stroke: var(--accent-color);
-    filter: drop-shadow(0 0 5px var(--accent-color-20));
-}
-
-/* Active State */
-.nav-menu li a.active {
-    color: var(--bg-primary);
-    background: var(--accent-color);
-    box-shadow: 0 0 15px var(--accent-color-20);
-}
-
-.nav-menu li a.active svg {
-    stroke: var(--bg-primary);
-}
-
-/* Tooltip */
-.tooltip {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background: var(--bg-tertiary);
-    color: var(--text-primary);
-    padding: 0.5rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 500;
     white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid var(--border-color);
-    pointer-events: none;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-/* Show Tooltip on Hover */
-.nav-menu li a:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-}
-
-/* Tooltip Arrow */
-.tooltip::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 5px;
-    border-style: solid;
-    border-color: var(--bg-tertiary) transparent transparent transparent;
-}
-
-/* Divider */
-.divider {
-    width: 1px;
-    height: 24px;
-    background: var(--border-color);
-    margin: 0 0.5rem;
-}
-
-/* Actions */
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.theme-toggle,
-.lang-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: transparent;
-    border: 1px solid transparent;
-    color: var(--text-primary);
+    background: none;
+    border: none;
+    color: inherit;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    font-size: 0.9rem;
+    transition: 0.5s cubic-bezier(0.11, 0.82, 0.39, 0.92);
 }
 
-.theme-toggle svg {
-    stroke: var(--text-primary);
-}
-
-.theme-toggle:hover,
-.lang-toggle:hover {
-    color: var(--accent-color);
-    background: var(--bg-tertiary);
-    border-color: var(--border-color);
-}
-
-.theme-toggle:hover svg {
-    stroke: var(--accent-color);
-}
-
-/* Animation Keyframes */
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
+@media(max-width: 1100px) {
+    .link {
+        font-size: 20px;
+        padding: 0 25px;
     }
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 640px) {
-    .header {
-        bottom: 1rem;
-        padding: 0 0.5rem;
-    }
+.link span {
+    display: inline-block;
+    font-size: 24px;
+}
 
-    .glass-nav {
-        gap: 0.5rem;
-        padding: 0.5rem 1rem;
-        width: 100%;
-        max-width: 400px;
-        justify-content: space-between;
+@media(max-width: 1100px) {
+    .link span {
+        font-size: 20px;
     }
+}
 
-    .nav-menu {
-        gap: 0.25rem;
-        width: 100%;
-        justify-content: space-around;
-        flex: 1;
+@media(max-width: 991px) {
+    .link span {
+        font-size: 14px;
     }
+}
 
-    .nav-menu li a {
-        width: 40px;
-        height: 40px;
+.link:before {
+    content: "[";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    transition: 0.5s cubic-bezier(0.11, 0.82, 0.39, 0.92);
+}
+
+.link:after {
+    content: "]";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    transition: 0.5s cubic-bezier(0.11, 0.82, 0.39, 0.92);
+}
+
+@media(max-width: 1100px) {
+    .link:before, .link:after {
+        font-size: 16px;
     }
+}
 
-    .tooltip {
+.link:hover:before {
+    left: 0;
+}
+
+.link:hover:after {
+    right: 0;
+}
+
+.header-contact {
+    margin-left: auto;
+    font-family: var(--font-primary);
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -2px;
+    line-height: 0.99;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+
+@media(max-width: 1100px) {
+    .header-contact {
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 768px) {
+    .header-contact {
         display: none;
-        /* Hide tooltips on mobile */
     }
+}
 
-    .divider {
-        display: none;
-    }
+.link-line {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-bottom: 5px;
+}
 
-    .nav-actions {
-        display: none;
-        /* Hide standard actions, maybe need a mobile menu or just show them differently? */
-    }
+.link-line svg {
+    margin-left: 20px;
+    height: 18px;
+    width: 18px;
+    transition: transform 0.5s cubic-bezier(0.11, 0.82, 0.39, 0.92);
+}
 
-    /* Let's keep actions visible but maybe smaller? Or perhaps the user wants to access them.
-       Since we removed the hamburger menu, we must ensure these are accessible.
-       Let's bring them back for mobile, constrained. */
-    .divider {
-        display: block;
-        margin: 0 0.25rem;
+@media(max-width: 1100px) {
+    .link-line svg {
+        height: 12px;
+        width: 12px;
+        margin-left: 10px;
     }
+    .link-line {
+        padding-bottom: 3px;
+    }
+}
 
-    .nav-actions {
-        display: flex;
-        gap: 0.25rem;
-    }
+.link-line:before, .link-line:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #efefef;
+    transition: transform 0.8s cubic-bezier(0.11, 0.82, 0.39, 0.92);
+}
 
-    .theme-toggle,
-    .lang-toggle {
-        width: 36px;
-        height: 36px;
-    }
+.link-line:before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.link-line:after {
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.link-line:hover:before {
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.11, 0.82, 0.39, 0.92);
+}
+
+.link-line:hover:after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.link-line:hover svg {
+    transform: rotate(45deg);
 }

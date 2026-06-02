@@ -1,18 +1,22 @@
 .skills {
-    padding: 6rem 2rem;
-    background: var(--bg-primary);
+    padding: 8rem 2rem;
+    background: transparent;
+    border-top: 1px solid var(--border-color);
+    position: relative;
+    z-index: 10;
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .section-title {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
     font-weight: 700;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
+    font-family: var(--font-display);
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -21,69 +25,81 @@
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Chessboard borders are simulated by setting a gap of 1px and a background color that is the border color, or by direct borders */
+    border: 1px solid var(--border-color);
+    background: var(--border-color);
+    gap: 1px;
 }
 
 .skill-category {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: 16px;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
+    background: var(--bg-primary); /* background matches primary bg so gap is the border */
+    padding: 3rem 2.5rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .skill-category:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px var(--shadow-color);
-    border-color: var(--accent-color);
+    background: var(--bg-secondary);
 }
 
 .category-header {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     color: var(--accent-color);
 }
 
+.category-header svg {
+    stroke: var(--text-primary);
+}
+
 .category-header h3 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 600;
     color: var(--text-primary);
     margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 0.5rem;
 }
 
 .skill-tag {
-    background: var(--bg-tertiary);
+    background: transparent;
     color: var(--text-primary);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
     font-weight: 500;
     border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .skill-tag:hover {
     background: var(--accent-color);
-    color: white;
-    color: var(--bg-tertiary);
+    color: var(--bg-primary);
+    border-color: var(--accent-color);
     transform: translateY(-2px);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .skills {
-        padding: 4rem 1rem;
+        padding: 5rem 1.5rem;
     }
 
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    .skill-category {
+        padding: 2rem 1.5rem;
     }
 }

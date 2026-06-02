@@ -5,65 +5,70 @@
 }
 
 :root {
-  --font-english: 'Poppins', sans-serif;
+  --font-english: 'Spline Sans Mono', monospace;
+  --font-english-display: 'Sofia Sans Condensed', sans-serif;
   --font-arabic: 'IBM Plex Sans Arabic', sans-serif;
+  --font-arabic-display: 'IBM Plex Sans Arabic', sans-serif;
   --font-primary: var(--font-english);
+  --font-display: var(--font-english-display);
 }
 
 .font-english {
   --font-primary: var(--font-english);
+  --font-display: var(--font-english-display);
   font-family: var(--font-english);
 }
 
 .font-arabic {
   --font-primary: var(--font-arabic);
+  --font-display: var(--font-arabic-display);
   font-family: var(--font-arabic);
 }
 
 [data-theme='dark'] {
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #242424;
-  --bg-tertiary: #2f2f2f;
-  --fillg:#fff;
-  --text-primary: #f5f5f5;
-  --text-secondary: #c9c9c9;
+  --bg-primary: #101010;
+  --bg-secondary: #000000;
+  --bg-tertiary: #181818;
+  --fillg: #ffffff;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
 
   --accent-color: #ffffff;
   --accent-color-5: rgba(255, 255, 255, 0.05);
   --accent-color-10: rgba(255, 255, 255, 0.1);
   --accent-color-20: rgba(255, 255, 255, 0.2);
 
-  --secondary-color: #6b8e5f;
-  --secondary-color-20: rgba(107, 142, 95, 0.2);
+  --secondary-color: #ffffff;
+  --secondary-color-20: rgba(255, 255, 255, 0.2);
 
-  --border-color: #3a3a3a;
-  --shadow-color: rgba(0, 0, 0, 0.3);
+  --border-color: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.5);
 
-  --gradient-primary: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-  --gradient-bg: linear-gradient(135deg, #242424 0%, #1a1a1a 100%);
+  --gradient-primary: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+  --gradient-bg: linear-gradient(135deg, #101010 0%, #000000 100%);
 }
 
 [data-theme='light'] {
-  --bg-primary: #ffffff;
-  --bg-secondary: #fafafa;
-  --bg-tertiary: #f5f5f5;
-  --fillg:#1a1a1a;
-  --text-primary: #1a1a1a;
-  --text-secondary: #3d3d3d;
+  --bg-primary: #f7f7f7;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f1f1;
+  --fillg: #000000;
+  --text-primary: #101010;
+  --text-secondary: #908c8c;
 
-  --accent-color: #1a1a1a;
-  --accent-color-5: rgba(26, 26, 26, 0.05);
-  --accent-color-10: rgba(26, 26, 26, 0.1);
-  --accent-color-20: rgba(26, 26, 26, 0.2);
+  --accent-color: #101010;
+  --accent-color-5: rgba(16, 16, 16, 0.05);
+  --accent-color-10: rgba(16, 16, 16, 0.1);
+  --accent-color-20: rgba(16, 16, 16, 0.2);
 
-  --secondary-color: #6b8e5f;
-  --secondary-color-20: rgba(107, 142, 95, 0.2);
+  --secondary-color: #101010;
+  --secondary-color-20: rgba(16, 16, 16, 0.2);
 
-  --border-color: #e5e5e5;
-  --shadow-color: rgba(0, 0, 0, 0.08);
+  --border-color: #101010;
+  --shadow-color: rgba(0, 0, 0, 0.05);
 
-  --gradient-primary: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-  --gradient-bg: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  --gradient-primary: linear-gradient(135deg, #101010 0%, #606060 100%);
+  --gradient-bg: linear-gradient(135deg, #f7f7f7 0%, #ffffff 100%);
 }
 
 html {
@@ -72,6 +77,7 @@ html {
 
 body {
   font-family: var(--font-primary);
+  font-weight: 300;
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
@@ -87,7 +93,10 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.2;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 0.99;
+  text-transform: uppercase;
 }
 
 a {
@@ -118,7 +127,6 @@ img {
 
 ::-webkit-scrollbar-thumb {
   background: var(--accent-color);
-  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -301,15 +309,9 @@ img {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1800px;
   margin: 0 auto;
-  padding: 0 2rem;
-}
-
-@media (max-width: 640px) {
-  .container {
-    padding: 0 1rem;
-  }
+  padding: 0 15px;
 }
 
 /* Hero Star Animations */
@@ -362,4 +364,41 @@ img {
   animation: shooting-star 3s ease-in-out infinite;
   z-index: 6;
   pointer-events: none;
+}
+
+/* ========== Masked Text Reveal Animation ========== */
+@keyframes revealUp {
+  from {
+    transform: translateY(110%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.reveal-wrapper {
+  overflow: hidden;
+  display: block;
+}
+
+.reveal-inner {
+  display: block;
+  transform: translateY(110%);
+  animation: revealUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-inner.delay-1 {
+  animation-delay: 0.15s;
+}
+
+.reveal-inner.delay-2 {
+  animation-delay: 0.3s;
+}
+
+.reveal-inner.delay-3 {
+  animation-delay: 0.45s;
+}
+
+.reveal-inner.delay-4 {
+  animation-delay: 0.6s;
 }

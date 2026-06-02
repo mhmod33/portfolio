@@ -1,53 +1,67 @@
 <section class="projects-page">
-    <div class="container">
-        <h1 class="page-title">
-            {{ langService.t({ en: 'My Projects', ar: 'مشاريعي' }) }}
-        </h1>
-
+    <div class="projects-accordion">
         <!-- Development Projects -->
-        <h2 class="section-title">
-            {{ langService.t({ en: 'Development Projects', ar: 'مشاريع التطوير' }) }}
-        </h2>
-        <div class="projects-grid">
-            <a [href]="project.link" target="_blank" class="project-card" *ngFor="let project of devProjects"
-                [style.background-image]="'url(' + project.image + ')'">
-                <div class="card-overlay">
-                    <div class="card-content">
-                        <h3 class="card-title">{{ project.title }}</h3>
-                        <p class="card-description">{{ project.description }}</p>
+        <div class="accordion-item" *ngFor="let project of devProjects; let i = index">
+            
+            <!-- Collapsed State -->
+            <div class="acc-collapsed">
+                <span class="acc-num">00-{{ i + 1 }}</span>
+                <h3 class="acc-title-vertical">{{ project.title }}</h3>
+            </div>
 
-                        <div class="card-tags">
-                            <span class="tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
-                        </div>
+            <!-- Expanded State -->
+            <div class="acc-expanded">
+                <div class="acc-content-top">
+                    <span class="acc-content-num">00-{{ i + 1 }}</span>
+                    <h3 class="acc-content-title">// {{ project.type || 'DEVELOPMENT' }}</h3>
+                </div>
+                
+                <div class="acc-content-middle">
+                    <div class="acc-tags">
+                        <span *ngFor="let tech of project.technologies">/ {{ tech }}</span>
                     </div>
-                    <div class="card-icon">
-                        <i class="icon-external">↗</i>
+                    <div class="acc-img-wrapper">
+                        <img [src]="project.image" [alt]="project.title">
                     </div>
                 </div>
-            </a>
+                
+                <div class="acc-content-bottom">
+                    <p class="acc-desc">{{ project.description }}</p>
+                    <a [href]="project.link" target="_blank" class="acc-link">{{ langService.t({ en: 'VIEW PROJECT ↗', ar: 'عرض المشروع ↗' }) }}</a>
+                </div>
+            </div>
         </div>
 
-        <!-- UI/UX Projects -->
-        <h2 class="section-title">
-            {{ langService.t({ en: 'UI/UX Design Projects', ar: 'مشاريع التصميم' }) }}
-        </h2>
-        <div class="projects-grid">
-            <a [href]="project.link" target="_blank" class="project-card" *ngFor="let project of designProjects"
-                [style.background-image]="'url(' + project.image + ')'">
-                <div class="card-overlay">
-                    <div class="card-content">
-                        <h3 class="card-title">{{ project.title }}</h3>
-                        <p class="card-description">{{ project.description }}</p>
+        <!-- Design Projects -->
+        <div class="accordion-item" *ngFor="let project of designProjects; let i = index">
+            
+            <!-- Collapsed State -->
+            <div class="acc-collapsed">
+                <span class="acc-num">00-{{ devProjects.length + i + 1 }}</span>
+                <h3 class="acc-title-vertical">{{ project.title }}</h3>
+            </div>
 
-                        <div class="card-tags">
-                            <span class="tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
-                        </div>
+            <!-- Expanded State -->
+            <div class="acc-expanded">
+                <div class="acc-content-top">
+                    <span class="acc-content-num">00-{{ devProjects.length + i + 1 }}</span>
+                    <h3 class="acc-content-title">// {{ project.type || 'UI/UX DESIGN' }}</h3>
+                </div>
+                
+                <div class="acc-content-middle">
+                    <div class="acc-tags">
+                        <span *ngFor="let tech of project.technologies">/ {{ tech }}</span>
                     </div>
-                    <div class="card-icon">
-                        <i class="icon-external">↗</i>
+                    <div class="acc-img-wrapper">
+                        <img [src]="project.image" [alt]="project.title">
                     </div>
                 </div>
-            </a>
+                
+                <div class="acc-content-bottom">
+                    <p class="acc-desc">{{ project.description }}</p>
+                    <a [href]="project.link" target="_blank" class="acc-link">{{ langService.t({ en: 'VIEW PROJECT ↗', ar: 'عرض المشروع ↗' }) }}</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>

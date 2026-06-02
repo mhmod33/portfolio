@@ -1,68 +1,72 @@
 <section class="about-page">
-    <div class="container">
-        <h1 class="page-title">
-            {{ langService.t({ en: 'About Me', ar: 'نبذة عني' }) }}
-        </h1>
+    <div class="container" style="width: 100%;">
+        <div class="about-title-container">
+            <span class="reveal-wrapper">
+                <h1 class="about-huge-title reveal-inner">
+                    {{ langService.t({ en: 'ABOUT ME', ar: 'نبذة عني' }) }}
+                </h1>
+            </span>
+        </div>
 
-        <div class="about-content">
-            <div class="profile-section">
-                <div class="image-wrapper">
-                    <img src="assets/profile.jpg" alt="Profile" class="profile-img" />
-                    <div class="experience-badge animate-float">
-                        <span class="years">1+</span>
-                        <span class="text">Years Exp.</span>
-                    </div>
-                </div>
+        <div class="about__wrapper">
+            <div class="about-second-title">
+                <h2>{{ langService.t({ en: 'HELLO! I\'M MAHMOUD SAYED ALI', ar: 'مرحباً! أنا محمود سيد علي' }) }}</h2>
             </div>
 
-            <div class="bio-section">
-                <h2 class="greeting">
-                    {{ langService.t({ en: 'Hello! I\'m Mahmoud Sayed Ali', ar: 'مرحباً! أنا محمود سيد علي' }) }}
-                </h2>
-                <h3 class="role-title ">Fullstack Developer & UI/UX Designer</h3>
-
-                <div class="bio-text  text-justify">
-                    <p>
-                        {{ langService.t({
-                        en: 'A passionate Fullstack Developer and UI/UX Designer with experience in
-                        creating impactful digital experiences.',
-                        ar: 'مطور Fullstack ومصمم تجربة المستخدم بخبرة إنشاء تجارب رقمية مؤثرة.'
-                        }) }}
-                    </p>
-                    <p>
-                        {{ langService.t({
-                        en: 'I specialize in combining beautiful design with robust functionality to create applications
-                        that not only look great but also provide exceptional user experiences.',
-                        ar: 'أمتاز في الجمع بين التصميم الجميل والوظائف القوية لإنشاء تطبيقات لا تبدو رائعة فقط بل توفر
-                        أيضاً تجارب مستخدم استثنائية.'
-                        }) }}
-                    </p>
+            <div class="about-content-blocks">
+                <div class="text-block profile-block">
+                    <div class="text-block__img">
+                        <img src="assets/profile.jpg" alt="Profile" />
+                    </div>
+                    <div class="text-block__text">
+                        <span>FULLSTACK DEVELOPER & UI/UX DESIGNER</span>
+                    </div>
                 </div>
 
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label  ">{{ langService.t({ en: 'Projects Completed', ar: 'مشاريع
-                            منجزة' }) }}</span>
+                <div class="text-block bio-block">
+                    <h3>
+                        BIO
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </h3>
+                    <div class="text-block__desc">
+                        <p>
+                            {{ langService.t({
+                            en: 'A passionate Fullstack Developer and UI/UX Designer with experience in creating impactful digital experiences.',
+                            ar: 'مطور Fullstack ومصمم تجربة المستخدم بخبرة إنشاء تجارب رقمية مؤثرة.'
+                            }) }}
+                        </p>
+                        <p style="margin-top: 20px;">
+                            {{ langService.t({
+                            en: 'I specialize in combining beautiful design with robust functionality to create applications that not only look great but also provide exceptional user experiences.',
+                            ar: 'أمتاز في الجمع بين التصميم الجميل والوظائف القوية لإنشاء تطبيقات لا تبدو رائعة فقط بل توفر أيضاً تجارب مستخدم استثنائية.'
+                            }) }}
+                        </p>
                     </div>
-                    <div class="stat-card">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label  ">{{ langService.t({ en: 'Client Satisfaction', ar: 'رضا
-                            العملاء' }) }}</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label  ">{{ langService.t({ en: 'Available', ar: 'متاح' })
-                            }}</span>
+                </div>
+
+                <div class="text-block stats-block">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-number">1+</span>
+                            <span class="stat-label">{{ langService.t({ en: 'YEARS EXP.', ar: 'سنوات خبرة' }) }}</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">{{ langService.t({ en: 'PROJECTS', ar: 'مشاريع منجزة' }) }}</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">{{ langService.t({ en: 'SATISFACTION', ar: 'رضا العملاء' }) }}</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="cta-buttons">
-                    <a routerLink="/contact" class="btn-primary ">
-                        {{ langService.t({ en: 'Contact Me', ar: 'تواصل معي' }) }}
+                    <a routerLink="/contact" class="btn-solid">
+                        {{ langService.t({ en: 'CONTACT ME', ar: 'تواصل معي' }) }}
                     </a>
-                    <a (click)="downloadCV()" class="btn-secondary cursor-pointer">
-                        {{ langService.t({ en: 'Download CV', ar: 'تحميل السيرة الذاتية' }) }}
+                    <a (click)="downloadCV()" class="btn-line cursor-pointer">
+                        {{ langService.t({ en: 'DOWNLOAD CV', ar: 'تحميل السيرة الذاتية' }) }}
                     </a>
                 </div>
             </div>

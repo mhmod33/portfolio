@@ -18,8 +18,9 @@
 
 @media(max-width: 768px) {
     .header {
-        color: var(--text-color);
+        color: var(--text-primary);
         mix-blend-mode: normal;
+        padding: 18px 0;
     }
 }
 
@@ -74,7 +75,12 @@
 
 @media(max-width: 768px) {
     .header__menu {
-        display: none; /* Hide for now, requires complex mobile menu */
+        margin: 0 8px 0 12px;
+        flex: 1;
+    }
+    .header__menu ul {
+        justify-content: flex-end;
+        align-items: center;
     }
 }
 
@@ -202,7 +208,8 @@
 
 @media(max-width: 768px) {
     .header-contact {
-        display: none;
+        font-size: 14px;
+        letter-spacing: -1px;
     }
 }
 
@@ -265,4 +272,79 @@
 
 .link-line:hover svg {
     transform: rotate(45deg);
+}
+
+/* =====================================================
+   Compact inline bar — keep nav + toggles on one row
+   ===================================================== */
+@media(max-width: 768px) {
+    .link {
+        font-size: 14px;
+        padding: 0 8px;
+    }
+    .link span {
+        font-size: 14px;
+    }
+    /* Drop the [ ] brackets to save horizontal space */
+    .link:before,
+    .link:after {
+        content: none;
+    }
+    .header__menu ul li {
+        margin-right: 4px;
+    }
+    /* Underline uses theme color now that blend mode is normal */
+    .link-line:before,
+    .link-line:after {
+        background-color: currentColor;
+    }
+}
+
+@media(max-width: 480px) {
+    .header {
+        padding: 14px 0;
+    }
+    .header-logo {
+        font-size: 20px;
+        width: 70px;
+    }
+    .header__menu {
+        margin: 0 4px;
+    }
+    .link,
+    .link span {
+        font-size: 12px;
+    }
+    .link {
+        padding: 0 5px;
+    }
+    .header__menu ul li {
+        margin-right: 2px;
+    }
+    .header-contact {
+        font-size: 12px;
+    }
+    .link-line svg {
+        height: 11px;
+        width: 11px;
+        margin-left: 6px;
+    }
+}
+
+@media(max-width: 360px) {
+    .header-logo {
+        font-size: 17px;
+        width: 56px;
+    }
+    .link,
+    .link span {
+        font-size: 11px;
+    }
+    .link {
+        padding: 0 4px;
+    }
+    /* Contact stays reachable via footer + About CTA; drop it here to keep the core links on one row */
+    .header-contact {
+        display: none;
+    }
 }

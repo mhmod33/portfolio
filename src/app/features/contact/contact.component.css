@@ -171,3 +171,46 @@
 .submit-btn span {
     font-weight: 700;
 }
+
+/* ===== Small phones ===== */
+@media (max-width: 480px) {
+    .contact-page {
+        padding: 40px 0 60px;
+    }
+    .contact-huge-title {
+        font-size: clamp(40px, 13vw, 64px);
+        letter-spacing: -2px;
+    }
+    .contact-title-container {
+        margin-bottom: 50px;
+    }
+    .contact-container {
+        padding-top: 50px;
+        gap: 45px;
+    }
+    .contact-info {
+        gap: 40px;
+    }
+    .contact-subheading {
+        font-size: 20px;
+    }
+    .contact-form {
+        gap: 32px;
+    }
+    .form-input {
+        font-size: 16px;
+    }
+    .submit-btn {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .contact-huge-title {
+        font-size: 38px;
+        letter-spacing: -1px;
+    }
+    .contact-subheading {
+        font-size: 18px;
+    }
+}

@@ -43,18 +43,22 @@
 }
 
 .exp-item {
+    position: relative;
     display: flex;
     justify-content: space-between;
+    gap: 30px;
     padding: 40px 0;
     border-bottom: 1px solid var(--text-secondary);
-    transition: all 0.3s ease;
+    transition: background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                padding 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .exp-item:hover {
     background-color: var(--text-primary);
     color: var(--bg-primary);
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 28px;
+    padding-right: 28px;
 }
 
 @media(max-width: 991px) {
@@ -62,6 +66,31 @@
         flex-direction: column;
         gap: 20px;
     }
+}
+
+.exp-index {
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--text-secondary);
+    margin-bottom: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.35s ease;
+}
+
+.exp-index::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: currentColor;
+    opacity: 0.35;
+}
+
+.exp-item:hover .exp-index {
+    color: var(--bg-primary);
 }
 
 .exp-meta {
@@ -118,11 +147,25 @@
     margin-bottom: 20px;
 }
 
+.exp-arrow {
+    display: inline-block;
+    margin-left: 14px;
+    opacity: 0;
+    transform: translateX(-12px);
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exp-item:hover .exp-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .exp-desc {
     font-family: var(--font-primary);
     font-size: 18px;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 1.6;
     color: var(--text-secondary);
     max-width: 600px;
 }
@@ -130,4 +173,228 @@
 .exp-item:hover .exp-desc {
     color: var(--bg-primary);
     opacity: 0.8;
+}
+
+/* =====================================================
+   ACTIVE / PRESENT Experience — Creative & Classic
+   ===================================================== */
+
+/* Outer frame: classic double-rule border with corner ornaments */
+.exp-item--active {
+    position: relative;
+    border: none;
+    border-top: 3px double var(--text-primary);
+    border-bottom: 3px double var(--text-primary);
+    padding: 48px 50px 48px 70px;
+    margin-bottom: 0;
+    background-color: var(--bg-primary);
+    overflow: hidden;
+    transition: background-color 0.4s ease;
+}
+
+/* Thick left column rule — classic editorial newspaper style */
+.exp-item--active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            var(--text-primary) 0px,
+            var(--text-primary) 10px,
+            transparent 10px,
+            transparent 18px
+        );
+}
+
+/* "CURRENT POSITION" stamp rotated on the left */
+.exp-item--active::after {
+    content: '◆ CURRENT';
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: center center;
+    font-family: var(--font-primary);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--text-primary);
+    white-space: nowrap;
+    opacity: 0.6;
+}
+
+/* Blinking live-dot in the year */
+.exp-item--active .exp-year {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.exp-item--active .exp-year::before {
+    content: '';
+    display: inline-block;
+    flex-shrink: 0;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: #22c55e;
+    box-shadow: 0 0 0 3px color-mix(in srgb, #22c55e 25%, transparent);
+    animation: live-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes live-pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 3px color-mix(in srgb, #22c55e 25%, transparent);
+        opacity: 1;
+    }
+    50% {
+        box-shadow: 0 0 0 7px color-mix(in srgb, #22c55e 0%, transparent);
+        opacity: 0.6;
+    }
+}
+
+/* Role title: large, bold, with an underline rule below */
+.exp-item--active .exp-role {
+    font-size: clamp(28px, 3.8vw, 56px);
+    margin-bottom: 10px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--text-primary);
+    line-height: 1.05;
+}
+
+/* Company name prominent */
+.exp-item--active .exp-company {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-primary);
+}
+
+/* Description */
+.exp-item--active .exp-desc {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-top: 14px;
+    max-width: 560px;
+    line-height: 1.7;
+}
+
+/* Hover: classic inverse — fill background */
+.exp-item--active:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    padding-left: 70px;
+    padding-right: 50px;
+}
+
+.exp-item--active:hover::after {
+    color: var(--bg-primary);
+}
+
+.exp-item--active:hover .exp-year {
+    color: var(--bg-primary);
+}
+
+.exp-item--active:hover .exp-company {
+    color: var(--bg-primary);
+    opacity: 0.7;
+}
+
+.exp-item--active:hover .exp-role {
+    border-bottom-color: var(--bg-primary);
+}
+
+.exp-item--active:hover .exp-desc {
+    color: color-mix(in srgb, var(--bg-primary) 70%, transparent);
+}
+
+@media(max-width: 991px) {
+    .exp-item--active {
+        padding: 40px 20px 40px 36px;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .exp-item--active:hover {
+        padding-left: 36px;
+        padding-right: 20px;
+    }
+    .exp-item--active::after {
+        font-size: 8px;
+        left: 8px;
+        letter-spacing: 3px;
+    }
+}
+
+/* ===== Small phones ===== */
+@media (max-width: 480px) {
+    .experience-page {
+        padding: 40px 0 60px;
+    }
+    .experience-huge-title {
+        font-size: clamp(48px, 16vw, 80px);
+        letter-spacing: -3px;
+    }
+    .experience-title-container {
+        margin-bottom: 30px;
+    }
+    .exp-item {
+        padding: 28px 0;
+        gap: 14px;
+    }
+    .exp-item:hover {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+    .exp-index {
+        margin-bottom: 12px;
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+    .exp-year {
+        font-size: 20px;
+    }
+    .exp-desc {
+        font-size: 15px;
+    }
+    .exp-item--active {
+        padding: 28px 14px 28px 30px;
+    }
+    .exp-item--active:hover {
+        padding-left: 30px;
+        padding-right: 14px;
+    }
+    .exp-item--active .exp-year {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 360px) {
+    .experience-huge-title {
+        font-size: 44px;
+        letter-spacing: -2px;
+    }
+    .exp-item {
+        padding: 22px 0;
+    }
+    .exp-meta {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .exp-arrow {
+        display: none;
+    }
+    .exp-item--active::after {
+        display: none;
+    }
+    .exp-item--active {
+        padding: 24px 12px;
+    }
+    .exp-item--active::before {
+        display: none;
+    }
 }

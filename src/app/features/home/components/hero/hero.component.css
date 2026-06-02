@@ -244,3 +244,47 @@
     display: block;
     font-weight: 700;
 }
+
+/* ===== Small phones ===== */
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 80px;
+    }
+    .shatter-text {
+        font-size: clamp(40px, 13vw, 60px);
+        letter-spacing: -2px;
+    }
+    .hero-designer {
+        padding: 0 16px;
+        margin-top: 10px;
+    }
+    .hero-designer__img {
+        width: 200px;
+        height: 250px;
+        margin-bottom: 24px;
+    }
+    .hero-name {
+        font-size: 22px;
+    }
+    .hero-description {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+    .hero-recent {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero {
+        padding-top: 70px;
+    }
+    .shatter-text {
+        font-size: 38px;
+        letter-spacing: -1px;
+    }
+    .hero-designer__img {
+        width: 170px;
+        height: 210px;
+    }
+}

@@ -54,65 +54,70 @@
     justify-content: center;
 }
 
-.hero-letter {
-    font-family: var(--font-display);
-    font-size: clamp(80px, 15vw, 250px);
-    font-weight: 700;
-    letter-spacing: -5px;
-    line-height: 0.85;
-    text-transform: uppercase;
+.shatter-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     position: relative;
     z-index: 2;
-    color: var(--text-primary);
-    text-align: center;
 }
 
-@media(max-width: 768px) {
-    .hero-letter {
-        font-size: 100px;
-        letter-spacing: -2px;
-    }
-}
-
-/* Marquee Animation */
-.hero-marquee-wrapper {
-    width: 100vw;
-    margin-top: 20px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    overflow: hidden;
-    z-index: 0;
-}
-
-.hero-marquee {
-    display: flex;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 100%;
-}
-
-.marquee-content {
-    display: flex;
-    animation: scroll 20s linear infinite;
-}
-
-.marquee-content span {
+.shatter-text {
     font-family: var(--font-display);
-    font-size: clamp(30px, 5vw, 60px);
+    font-size: clamp(50px, 10vw, 150px);
     font-weight: 700;
     text-transform: uppercase;
-    color: var(--text-secondary);
-    padding: 0 20px;
+    color: var(--text-primary);
+    line-height: 0.85;
+    text-align: center;
+    margin: 0;
+    letter-spacing: -3px;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+.shatter-line {
+    display: block;
+    overflow: hidden; /* Clips the shards as they fly in for a cleaner look, or leave visible for dramatic effect. Let's leave visible by not adding overflow hidden so shards fly from everywhere. */
+}
+
+.shatter-word {
+    display: inline-block;
+    opacity: 0;
+    margin: 0 10px;
+    transform-origin: center;
+}
+
+/* Shatter entry animations for each piece */
+.shatter-line:nth-child(1) .shatter-word:nth-child(1) {
+    animation: shatter-in-1 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.2s;
+}
+.shatter-line:nth-child(1) .shatter-word:nth-child(2) {
+    animation: shatter-in-2 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.4s;
+}
+.shatter-line:nth-child(2) .shatter-word:nth-child(1) {
+    animation: shatter-in-3 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.6s;
+}
+.shatter-line:nth-child(2) .shatter-word:nth-child(2) {
+    animation: shatter-in-4 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.8s;
+}
+
+@keyframes shatter-in-1 {
+    0% { opacity: 0; transform: translate(-100px, -50px) rotate(-45deg) scale(1.5); filter: blur(10px); }
+    100% { opacity: 1; transform: translate(0, 0) rotate(0) scale(1); filter: blur(0); }
+}
+
+@keyframes shatter-in-2 {
+    0% { opacity: 0; transform: translate(100px, -150px) rotate(60deg) scale(0.5); filter: blur(10px); }
+    100% { opacity: 1; transform: translate(0, 0) rotate(0) scale(1); filter: blur(0); }
+}
+
+@keyframes shatter-in-3 {
+    0% { opacity: 0; transform: translate(-150px, 100px) rotate(80deg) scale(1.8); filter: blur(10px); }
+    100% { opacity: 1; transform: translate(0, 0) rotate(0) scale(1); filter: blur(0); }
+}
+
+@keyframes shatter-in-4 {
+    0% { opacity: 0; transform: translate(120px, 80px) rotate(-30deg) scale(0.8); filter: blur(10px); }
+    100% { opacity: 1; transform: translate(0, 0) rotate(0) scale(1); filter: blur(0); }
 }
 
 .hero-designer {
